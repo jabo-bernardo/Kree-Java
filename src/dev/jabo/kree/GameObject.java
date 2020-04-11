@@ -6,7 +6,7 @@ public class GameObject {
 
 	public Transform transform = new Transform();
 	
-	public Component[] components = new Component[0];
+	private Component[] components = new Component[0];
 	
 	public float id;
 	public String name;
