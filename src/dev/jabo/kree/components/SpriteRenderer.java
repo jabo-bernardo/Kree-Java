@@ -12,6 +12,7 @@ public class SpriteRenderer extends Component {
 	public SpriteRenderer(String path) {
 		
 		this.sprite = new Sprite(path);
+		this.name = "Sprite Renderer";
 		
 	}
 	

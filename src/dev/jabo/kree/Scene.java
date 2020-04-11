@@ -6,7 +6,7 @@ public abstract class Scene {
 	
 	protected Game game;
 	
-	protected GameObject[] gameObjects = new GameObject[0];
+	public GameObject[] gameObjects = new GameObject[0];
 	
 	public Scene(Game game) {
 		this.game = game;

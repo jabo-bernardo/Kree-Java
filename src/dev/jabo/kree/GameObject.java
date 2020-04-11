@@ -96,4 +96,8 @@ public class GameObject {
 		}
 	}
 	
+	public Scene GetParentScene() {
+		return this.parentScene;
+	}
+	
 }

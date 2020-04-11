@@ -7,7 +7,7 @@ import dev.jabo.kree.Component;
 public class MeshRenderer extends Component {
 	
 	public MeshRenderer() {
-		
+		this.name = "Mesh Renderer";
 	}
 
 	@Override

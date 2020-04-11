@@ -4,7 +4,6 @@ import java.awt.Graphics;
 
 import dev.jabo.kree.Animation;
 import dev.jabo.kree.Component;
-import dev.jabo.kree.Debug;
 
 public class Animator extends Component {
 
@@ -13,6 +12,7 @@ public class Animator extends Component {
 	
 	public Animator(Animation[] animationData) {
 		this.allAnimation = animationData;
+		this.name = "Animator";
 	}
 	
 	@Override
