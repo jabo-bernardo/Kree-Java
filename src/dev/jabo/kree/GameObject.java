@@ -31,13 +31,17 @@ public class GameObject {
 	
 	public void Update() {
 		for(int i = 0; i < components.length; i++) {
-			components[i].Update();
+			if(!components[i].disabled) {
+				components[i].Update();
+			}
 		}
 	}
 	
 	public void Render(Graphics g) {
 		for(int i = 0; i < components.length; i++) {
-			components[i].Render(g);
+			if(!components[i].disabled) {
+				components[i].Render(g);
+			}
 		}		
 	}
 	

@@ -1,16 +1,25 @@
 package dev.jabo.kree;
 
+import java.awt.Point;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
+import dev.jabo.kree.components.BoxCollider;
+
 public class Input implements KeyListener, MouseMotionListener, MouseListener {
 	
 	public static boolean mouseClicked;
+	
 	public static int mouseX, mouseY;
+	
 	public static boolean[] keys = new boolean[256];
+	
+	public static boolean leftMouseDown;
+	public static boolean middleMouseDown;
+	public static boolean rightMouseDown;
 
 	@Override
 	public void keyPressed(KeyEvent arg0) {
@@ -45,11 +54,23 @@ public class Input implements KeyListener, MouseMotionListener, MouseListener {
 	@Override
 	public void mousePressed(MouseEvent arg0) {
 		mouseClicked = true;
+		if(arg0.getButton() == MouseEvent.BUTTON1) {
+			leftMouseDown = true;
+		}
+		if(arg0.getButton() == MouseEvent.BUTTON2) {
+			middleMouseDown = true;
+		}
+		if(arg0.getButton() == MouseEvent.BUTTON3) {
+			rightMouseDown = true;
+		}
 	}
 
 	@Override
 	public void mouseReleased(MouseEvent arg0) {
 		mouseClicked = false;
+		leftMouseDown = false;
+		middleMouseDown = false;
+		rightMouseDown = false;
 	}
 
 	@Override
@@ -71,5 +92,14 @@ public class Input implements KeyListener, MouseMotionListener, MouseListener {
 		return keys[keyCode];
 	}
 	
+	public static boolean MouseIn(GameObject obj) {		
+		if(obj.GetComponent("Box Collider") != null) {
+			BoxCollider col = (BoxCollider) obj.GetComponent("Box Collider");
+			if(col.GetCollider().contains(new Point(GetMouse().x, GetMouse().y))) {
+				return true;
+			}
+		}		
+		return false;		
+	}
 	
 }

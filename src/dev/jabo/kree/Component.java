@@ -15,6 +15,8 @@ public abstract class Component {
 
 	protected String name;
 	
+	public boolean disabled;
+	
 	public abstract void Update();
 	
 	public abstract void Render(Graphics g);
