@@ -25,7 +25,7 @@ public class MeshRenderer extends Component {
 	public void Render(Graphics g) {
 		Graphics2D g2d = (Graphics2D)g;
 		AffineTransform oldTransform = g2d.getTransform();
-	    g2d.rotate(gameObject.transform.rotation, gameObject.transform.position.x, gameObject.transform.position.y);
+		g2d.rotate(Math.toRadians(gameObject.transform.rotation), gameObject.transform.position.x, gameObject.transform.position.y);
 	    if(gameObject != null) {
 	    	g2d.fillRect(gameObject.transform.position.x - 16, gameObject.transform.position.y - 16, gameObject.transform.scale.x, gameObject.transform.scale.y);
 		}
