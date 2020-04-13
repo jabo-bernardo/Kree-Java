@@ -12,7 +12,7 @@ public class Launcher {
 		
 		MyScene myScene = new MyScene(game);
 		
-		SceneManager.SetScene(myScene);
+		SceneManager.setScene(myScene);
 		
 		game.start();
 		

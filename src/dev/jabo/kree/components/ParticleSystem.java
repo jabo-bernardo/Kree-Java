@@ -63,12 +63,12 @@ public class ParticleSystem extends Component {
 		
 		for(int  i = 0; i < particles.length; i++) {
 			particles[i] = new Particle(this, i);
-			particles[i].setVelocity(Random.Range(minimumVelocity, maximumVelocity + 1));
-			particles[i].setScale(Random.Range(minimumSize, maximumSize + 1));
+			particles[i].setVelocity(Random.range(minimumVelocity, maximumVelocity + 1));
+			particles[i].setScale(Random.range(minimumSize, maximumSize + 1));
 			particles[i].setPosition(x, y);
 			if(this.type == ParticleSystem.TYPE_CIRCULAR) {
 				
-				particles[i].setDirection(Random.Range(0, 8));
+				particles[i].setDirection(Random.range(0, 8));
 				
 			}
 			
@@ -99,7 +99,7 @@ public class ParticleSystem extends Component {
 		}
 	}
 	
-	public boolean IsAlive() {
+	public boolean isAlive() {
 		return alive;
 	}
 

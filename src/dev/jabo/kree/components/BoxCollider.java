@@ -32,11 +32,11 @@ public class BoxCollider extends Component {
 		
 	}
 	
-	public boolean Contains(Vector2 vector2) {
-		return GetCollider().contains(new Point(vector2.x, vector2.y));
+	public boolean contains(Vector2 vector2) {
+		return getCollider().contains(new Point(vector2.x, vector2.y));
 	}
 	
-	public Rectangle GetCollider() {
+	public Rectangle getCollider() {
 		if(collider != null) {
 			return collider;
 		}

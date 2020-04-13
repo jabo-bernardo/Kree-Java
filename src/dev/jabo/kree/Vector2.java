@@ -14,7 +14,7 @@ public class Vector2 {
 		this.y = y;
 	}
 	
-	static int Distance(Vector2 v1, Vector2 v2) {
+	static int distance(Vector2 v1, Vector2 v2) {
 		return (int) Math.floor(
 			Math.sqrt(
 				Math.pow(v2.x - v1.x, 2) +
@@ -23,31 +23,31 @@ public class Vector2 {
 		);
 	}
 	
-	public void Add(Vector2 vector) {
+	public void add(Vector2 vector) {
 		this.x += vector.x;
 		this.y += vector.y;
 	}
 	
-	public void Subtract(Vector2 vector) {
+	public void subtract(Vector2 vector) {
 		this.x -= vector.x;
 		this.y -= vector.y;
 	}
 	
-	public void Divide(Vector2 vector) {
+	public void divide(Vector2 vector) {
 		this.x /= vector.x;
 		this.y /= vector.y;
 	}
 	
-	public void Multiply(Vector2 vector) {
+	public void multiply(Vector2 vector) {
 		this.x *= vector.x;
 		this.y *= vector.y;
 	}
 	
-	public void MoveTowards(Vector2 to, float speed) {
+	public void moveTowards(Vector2 to, float speed) {
 		if(to == null)
 			return;
 		
-		if(Distance(this, to) < speed) {
+		if(distance(this, to) < speed) {
 			return;
 		}
 		

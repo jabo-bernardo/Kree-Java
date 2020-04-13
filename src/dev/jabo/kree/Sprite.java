@@ -8,7 +8,7 @@ public class Sprite {
 	
 	public Sprite(String path) {
 		
-		this.image = ImageLoader.LoadImage(path);
+		this.image = ImageLoader.loadImage(path);
 		
 	}
 	

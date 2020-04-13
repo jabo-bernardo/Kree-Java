@@ -82,27 +82,27 @@ public class Text extends UserInterface {
 		
 	}
 	
-	public void SetColor(Color color) {
+	public void setColor(Color color) {
 		this.color = color;
 	}
 	
-	public void ShowBorder() {
+	public void showBorder() {
 		showBorder = true;
 	}
 	
-	public void HideBorder() {
+	public void hideBorder() {
 		showBorder = false;
 	}
 	
-	public void SetFont(Font font) {
+	public void setFont(Font font) {
 		this.font = font;
 	}
 	
-	public void SetText(String text) {
+	public void setText(String text) {
 		this.text = text;
 	}
 	
-	public String GetText() {
+	public String getText() {
 		return text;
 	}
 

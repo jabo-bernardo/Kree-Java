@@ -18,7 +18,7 @@ public class SpriteSheet {
 		
 	}
 	
-	public BufferedImage[] GetFrames() {
+	public BufferedImage[] getFrames() {
 		return images;
 	}
 	

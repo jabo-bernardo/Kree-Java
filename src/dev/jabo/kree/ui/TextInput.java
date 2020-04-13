@@ -46,7 +46,7 @@ public class TextInput extends UserInterface {
 	public void Update() {
 		
 		if(Input.leftMouseDown) {
-			if(collider.contains(new Point(Input.GetMouse().x, Input.GetMouse().y))) {
+			if(collider.contains(new Point(Input.getMouse().x, Input.getMouse().y))) {
 				selected = true;
 			} else {
 				selected = false;
@@ -118,37 +118,37 @@ public class TextInput extends UserInterface {
 		
 	}
 	
-	public void SetFont(Font font) {
+	public void setFont(Font font) {
 		this.font = font;
 	}
 	
-	public void LimitCharacter(int limit) {
+	public void limitCharacter(int limit) {
 		charLimit = limit;
 	}
 	
-	public void SetColor(Color backgroundColor, Color foregroundColor, Color selectedColor) {
+	public void setColor(Color backgroundColor, Color foregroundColor, Color selectedColor) {
 		this.backgroundColor = backgroundColor;
 		this.foregroundColor = foregroundColor;
 		this.selectedColor = selectedColor;
 	}
 	
-	public void SetPosition(Vector2 position) {
+	public void setPosition(Vector2 position) {
 		this.position = position;
 	}
 	
-	public void SetScale(Vector2 scale) {
+	public void setScale(Vector2 scale) {
 		this.scale = scale;
 	}
 	
-	public String GetValue() {
+	public String getValue() {
 		return value;
 	}
 	
-	public Vector2 GetScale() {
+	public Vector2 setScale() {
 		return scale;
 	}
 	
-	public Vector2 GetPosition() {
+	public Vector2 getPosition() {
 		return position;
 	}
 

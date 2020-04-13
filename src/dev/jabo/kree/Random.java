@@ -2,7 +2,7 @@ package dev.jabo.kree;
 
 public class Random {
 
-	public static int Range(int min, int max) {
+	public static int range(int min, int max) {
 		int rand = (int) (Math.random() * max);
 		while (rand < min) {
 			rand = (int) (Math.random() * max);
@@ -10,7 +10,7 @@ public class Random {
 		return rand;
 	}
 	
-	public static float Range(float min, float max) {
+	public static float range(float min, float max) {
 		float rand = (float) (Math.random() * max);
 		while (rand < min) {
 			rand = (float) (Math.random() * max);
@@ -18,7 +18,7 @@ public class Random {
 		return rand;
 	}
 	
-	public static double Range(double min, double max) {
+	public static double range(double min, double max) {
 		double rand = Math.random() * max;
 		while(rand < min) {
 			rand = Math.random() * max;

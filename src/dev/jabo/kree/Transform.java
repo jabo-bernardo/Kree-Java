@@ -10,8 +10,8 @@ public class Transform {
 		scale = new Vector2(0, 0);
 	}
 	
-	public void Translate(Vector2 position) {
-		this.position.Add(position);
+	public void translate(Vector2 position) {
+		this.position.add(position);
 	}
 	
 }

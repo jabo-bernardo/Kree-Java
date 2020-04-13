@@ -28,8 +28,8 @@ public class MyScene extends Scene {
 		
 		
 		
-		myTextInput.SetFont(new Font("Arial", Font.BOLD, 24));
-		myText.SetColor(new Color(255, 100, 100));
+		myTextInput.setFont(new Font("Arial", Font.BOLD, 24));
+		myText.setColor(new Color(255, 100, 100));
 		
 		
 		
@@ -37,14 +37,14 @@ public class MyScene extends Scene {
 
 	@Override
 	public void Update() {
-		myText.SetText(myTextInput.GetValue());
+		myText.setText(myTextInput.getValue());
 		
 		if(Input.leftMouseDown) {
-			myBar.Add(0.5f);
+			myBar.add(0.5f);
 		}
 		
 		if(Input.rightMouseDown) {
-			myBar.Subtract(0.5f);
+			myBar.subtract(0.5f);
 		}
 	}
 

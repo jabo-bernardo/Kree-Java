@@ -8,18 +8,18 @@ public class SceneManager {
 
 	public static Scene activeScene;
 	
-	public static Scene GetScene() {
+	public static Scene getScene() {
 		return activeScene;
 	}
 	
-	public static void SetScene(Scene scene) {
+	public static void setScene(Scene scene) {
 		scene.Initialize();
 		activeScene = scene;
 	}
 	
 	public static void Update() {
-		if(SceneManager.GetScene() != null) {
-			SceneManager.GetScene().Update();
+		if(SceneManager.getScene() != null) {
+			SceneManager.getScene().Update();
 			for(GameObject obj : activeScene.gameObjects) {
 				obj.Update();
 			}
@@ -30,8 +30,8 @@ public class SceneManager {
 	}
 	
 	public static void Render(Graphics g) {
-		if(SceneManager.GetScene() != null) {
-			SceneManager.GetScene().Render(g);
+		if(SceneManager.getScene() != null) {
+			SceneManager.getScene().Render(g);
 			for(GameObject obj : activeScene.gameObjects) {
 				obj.Render(g);
 			}

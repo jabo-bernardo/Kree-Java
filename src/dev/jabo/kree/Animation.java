@@ -15,7 +15,7 @@ public class Animation {
 		this.name = name;
 		
 		this.speed = speed;
-		this.frames = spr.GetFrames();
+		this.frames = spr.getFrames();
 		index = 0;
 		timer = 0;
 		lastTime = System.currentTimeMillis();
@@ -33,7 +33,7 @@ public class Animation {
 		}
 	}
 	
-	public String GetAnimationName() {
+	public String getAnimationName() {
 		return name;
 	}
 	

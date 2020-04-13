@@ -28,9 +28,9 @@ public class Animator extends Component {
 		}
 	}
 	
-	public void SetActiveAnimation(String name) {
+	public void setActiveAnimation(String name) {
 		for(Animation anim : allAnimation) {
-			if(anim.GetAnimationName() == name) {
+			if(anim.getAnimationName() == name) {
 				activeAnimation = anim;
 			}
 		}

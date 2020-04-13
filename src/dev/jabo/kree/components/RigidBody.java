@@ -3,7 +3,6 @@ package dev.jabo.kree.components;
 import java.awt.Graphics;
 
 import dev.jabo.kree.Component;
-import dev.jabo.kree.Debug;
 import dev.jabo.kree.GameObject;
 import dev.jabo.kree.Vector2;
 
@@ -22,10 +21,10 @@ public class RigidBody extends Component {
 	public void Update() {
 		this.yVelocity += acceleration * mass;
 		
-		for(GameObject obj : gameObject.GetParentScene().gameObjects) {
+		for(GameObject obj : gameObject.getParentScene().gameObjects) {
 			if(obj.id == gameObject.id)
 				continue;
-			if(obj.GetComponent("Box Collider") != null) {
+			if(obj.getComponent("Box Collider") != null) {
 				Vector2 gameObjectPos = gameObject.transform.position;
 				Vector2 colliderObjectPos = obj.transform.position;
 				Vector2 gameObjectScale = gameObject.transform.scale;
@@ -50,13 +49,11 @@ public class RigidBody extends Component {
 				if(gameObjectPos.y + gameObjectScale.y > colliderObjectPos.y + 16 && gameObjectPos.y < colliderObjectPos.y + colliderObjectScale.y - 16) {
 					if(gameObjectPos.x < colliderObjectPos.x) {
 						// Right
-						Debug.Log("Right");
 						gameObjectPos.x = colliderObjectPos.x - gameObjectScale.x - 1;
 						return;
 					}
 					if(gameObjectPos.x + gameObjectScale.x > colliderObjectPos.x) {
 						// Left
-						Debug.Log("Left");
 						gameObjectPos.x = colliderObjectPos.x + colliderObjectScale.x + 1;
 						return;
 					}
@@ -79,12 +76,12 @@ public class RigidBody extends Component {
 				}
 			}
 		}
-		gameObject.transform.Translate(new Vector2((int) xVelocity, (int) yVelocity));
+		gameObject.transform.translate(new Vector2((int) xVelocity, (int) yVelocity));
 		xVelocity = 0;
 		
 	}
 	
-	public void AddHorizontalForce(int xForce) {
+	public void addHorizontalForce(int xForce) {
 		this.xVelocity = xForce;
 	}
 

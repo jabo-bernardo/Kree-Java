@@ -60,54 +60,54 @@ public class ProgressBar extends UserInterface {
 	}
 	
 	// Misc
-	public void Add(float value) {
+	public void add(float value) {
 		this.value += value;
 	}
 	
-	public void Subtract(float value) {
+	public void subtract(float value) {
 		this.value -= value;
 	}
 	
 	// Setters
-	public void SetValue(float value) {
+	public void setValue(float value) {
 		this.value = value;
 	}
 	
-	public void SetMaxValue(float maxValue) {
+	public void setMaxValue(float maxValue) {
 		this.maxValue = maxValue;
 	}
 	
-	public void SetColor(Color foregroundColor, Color backgroundColor) {
+	public void setColor(Color foregroundColor, Color backgroundColor) {
 		this.foregroundColor = foregroundColor;
 		this.backgroundColor = backgroundColor;
 	}
 	
-	public void SetPosition(Vector2 position) {
+	public void setPosition(Vector2 position) {
 		this.position = position;
 	}
 	
-	public void SetScale(Vector2 scale) {
+	public void setScale(Vector2 scale) {
 		this.scale = scale;
 	}
 	
-	public void SetPadding(int padding) {
+	public void setPadding(int padding) {
 		this.padding = padding;
 	}
 	
 	// Getters
-	public float GetValue() {
+	public float getValue() {
 		return value;
 	}
 	
-	public float GetMaxValue() {
+	public float getMaxValue() {
 		return maxValue;
 	}
 	
-	public Vector2 GetPosition() {
+	public Vector2 getPosition() {
 		return position;
 	}
 	
-	public Vector2 GetScale() {
+	public Vector2 getScale() {
 		return scale;
 	}
 

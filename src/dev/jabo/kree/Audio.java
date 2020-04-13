@@ -23,7 +23,7 @@ public class Audio {
         this.sound = new File(this.path);
     }
     
-    public boolean IsPlaying() {
+    public boolean isPlaying() {
     	if(soundClip != null) {
     		if(soundClip.isRunning()) {
     			return true;

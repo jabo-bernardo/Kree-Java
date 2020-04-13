@@ -26,7 +26,7 @@ public class MeshRenderer extends Component {
 		}
 	}
 	
-	public void SetColor(Color color) {
+	public void setColor(Color color) {
 		this.color = color;
 	}
 

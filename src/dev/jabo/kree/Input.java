@@ -94,18 +94,18 @@ public class Input implements KeyListener, MouseMotionListener, MouseListener {
 		mouseY = arg0.getY();
 	}
 	
-	public static Vector2 GetMouse() {
+	public static Vector2 getMouse() {
 		return new Vector2(mouseX, mouseY);
 	}
 	
-	public static boolean IsKeyPressed(int keyCode) {
+	public static boolean isKeyPressed(int keyCode) {
 		return keys[keyCode];
 	}
 	
 	public static boolean MouseIn(GameObject obj) {		
-		if(obj.GetComponent("Box Collider") != null) {
-			BoxCollider col = (BoxCollider) obj.GetComponent("Box Collider");
-			if(col.GetCollider().contains(new Point(GetMouse().x, GetMouse().y))) {
+		if(obj.getComponent("Box Collider") != null) {
+			BoxCollider col = (BoxCollider) obj.getComponent("Box Collider");
+			if(col.getCollider().contains(new Point(getMouse().x, getMouse().y))) {
 				return true;
 			}
 		}		

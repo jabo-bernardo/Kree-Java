@@ -19,20 +19,20 @@ public class PlayerMovement extends Component {
 	public void Update() {
 		
 		// Left key
-		if(Input.IsKeyPressed(37)) {
-			gameObject.transform.Translate(Vector2.left);
+		if(Input.isKeyPressed(37)) {
+			gameObject.transform.translate(Vector2.left);
 		}
 		// Right key
-		if(Input.IsKeyPressed(39)) {
-			gameObject.transform.Translate(Vector2.right);
+		if(Input.isKeyPressed(39)) {
+			gameObject.transform.translate(Vector2.right);
 		}
 		// Up key
-		if(Input.IsKeyPressed(38)) {
-			gameObject.transform.Translate(Vector2.up);
+		if(Input.isKeyPressed(38)) {
+			gameObject.transform.translate(Vector2.up);
 		}
 		// Down key
-		if(Input.IsKeyPressed(40)) {
-			gameObject.transform.Translate(Vector2.down);
+		if(Input.isKeyPressed(40)) {
+			gameObject.transform.translate(Vector2.down);
 		}
 		
 	}

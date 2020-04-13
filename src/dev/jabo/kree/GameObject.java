@@ -45,7 +45,7 @@ public class GameObject {
 		}		
 	}
 	
-	public Component GetComponent(String componentName) {
+	public Component getComponent(String componentName) {
 		for(int i = 0; i < components.length; i++) {
 			if(components[i].name == componentName) {
 				return components[i];
@@ -54,7 +54,7 @@ public class GameObject {
 		return null;
 	}
 	
-	public void AddComponent(Component component) {
+	public void addComponent(Component component) {
 		
 		component.gameObject = this;
 		
@@ -69,16 +69,16 @@ public class GameObject {
 	}
 	
 	// Set GameObject's position
-	public void SetPosition(Vector2 position) {
+	public void setPosition(Vector2 position) {
 		transform.position = position;
 	}
 	
 	// Set GameObject's dimension
-	public void SetScale(Vector2 scale) {
+	public void setScale(Vector2 scale) {
 		transform.scale = scale;
 	}
 	
-	public void Destroy() {
+	public void destroy() {
 		for(int i = 0; i < parentScene.gameObjects.length; i++) {
 			if(parentScene.gameObjects[i].id == this.id) {
 				parentScene.gameObjects[i] = null;
@@ -100,7 +100,7 @@ public class GameObject {
 		}
 	}
 	
-	public Scene GetParentScene() {
+	public Scene getParentScene() {
 		return this.parentScene;
 	}
 	
