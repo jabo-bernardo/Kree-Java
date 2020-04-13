@@ -11,7 +11,7 @@ public class Transform {
 	}
 	
 	public void Translate(Vector2 position) {
-		Vector2.Add(this.position, position);
+		this.position.Add(position);
 	}
 	
 }

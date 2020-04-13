@@ -23,9 +23,24 @@ public class Vector2 {
 		);
 	}
 	
-	static void Add(Vector2 v1, Vector2 v2) {
-		v1.x += v2.x;
-		v1.y += v2.y;
+	public void Add(Vector2 vector) {
+		this.x += vector.x;
+		this.y += vector.y;
+	}
+	
+	public void Subtract(Vector2 vector) {
+		this.x -= vector.x;
+		this.y -= vector.y;
+	}
+	
+	public void Divide(Vector2 vector) {
+		this.x /= vector.x;
+		this.y /= vector.y;
+	}
+	
+	public void Multiply(Vector2 vector) {
+		this.x *= vector.x;
+		this.y *= vector.y;
 	}
 	
 	public void MoveTowards(Vector2 to, float speed) {

@@ -2,6 +2,8 @@ package dev.jabo.kree;
 
 import java.awt.Graphics;
 
+import dev.jabo.kree.ui.UserInterface;
+
 public class SceneManager {
 
 	public static Scene activeScene;
@@ -21,6 +23,9 @@ public class SceneManager {
 			for(GameObject obj : activeScene.gameObjects) {
 				obj.Update();
 			}
+			for(UserInterface obj : activeScene.userInterfaces) {
+				obj.Update();
+			}
 		}
 	}
 	
@@ -28,6 +33,9 @@ public class SceneManager {
 		if(SceneManager.GetScene() != null) {
 			SceneManager.GetScene().Render(g);
 			for(GameObject obj : activeScene.gameObjects) {
+				obj.Render(g);
+			}
+			for(UserInterface obj : activeScene.userInterfaces) {
 				obj.Render(g);
 			}
 		}

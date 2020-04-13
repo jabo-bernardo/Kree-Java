@@ -20,15 +20,25 @@ public class Input implements KeyListener, MouseMotionListener, MouseListener {
 	public static boolean leftMouseDown;
 	public static boolean middleMouseDown;
 	public static boolean rightMouseDown;
+	
+	
+	public static boolean keyPressed = false;
+	public static char lastKey;
 
+	
+	static int limiter;
 	@Override
 	public void keyPressed(KeyEvent arg0) {
 		keys[arg0.getKeyCode()] = true;
+		lastKey = (char) arg0.getKeyCode();
+		keyPressed = true;
 	}
 
 	@Override
 	public void keyReleased(KeyEvent arg0) {
 		keys[arg0.getKeyCode()] = false;
+		keyPressed = false;
+		
 	}
 
 	@Override
