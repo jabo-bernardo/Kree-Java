@@ -13,16 +13,18 @@ public class Game implements Runnable {
 	
 	private Window window;
 	
-	public static Input INPUT = new Input();
+	public static Input Input = new Input();
+	
+	public boolean debug = true;
 	
 	public Game(Window window) {
 		this.window = window;
 	}
 
 	public void Initialize() {
-		window.getWindow().addKeyListener(INPUT);
-		window.getCanvas().addMouseListener(INPUT);
-		window.getCanvas().addMouseMotionListener(INPUT);
+		window.getWindow().addKeyListener(Input);
+		window.getCanvas().addMouseListener(Input);
+		window.getCanvas().addMouseMotionListener(Input);
 	}
 	
 	public void Update() {
@@ -99,10 +101,12 @@ public class Game implements Runnable {
 				delta--;
 			}
 			
-			if(timer >= 1000000000){
-				System.out.println("FPS: " + ticks);
-				ticks = 0;
-				timer = 0;
+			if(debug) {
+				if(timer >= 1000000000){
+					System.out.println("FPS: " + ticks);
+					ticks = 0;
+					timer = 0;
+				}
 			}
 			
 		}
