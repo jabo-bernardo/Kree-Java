@@ -8,7 +8,10 @@ public abstract class Scene {
 	
 	protected Game game;
 	
+	// GameObjects in scene
 	public GameObject[] gameObjects = new GameObject[0];
+	
+	// UserInterfaces in scene
 	public UserInterface[] userInterfaces = new UserInterface[0];
 	
 	public Scene(Game game) {

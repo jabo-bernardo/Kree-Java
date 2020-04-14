@@ -4,11 +4,16 @@ import java.awt.image.BufferedImage;
 
 public class Animation {
 
+	// Speed (ms)
 	private int speed, index;
-	private long lastTime, timer;
+	
 	private BufferedImage[] frames;
 	
+	// Name of animation
 	private String name;
+	
+	// Timing variables
+	private long lastTime, timer;
 	
 	public Animation(String name, SpriteSheet spr, int speed){
 		
@@ -19,6 +24,7 @@ public class Animation {
 		index = 0;
 		timer = 0;
 		lastTime = System.currentTimeMillis();
+		
 	}
 	
 	public void Update(){

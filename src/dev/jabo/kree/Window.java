@@ -7,7 +7,9 @@ import javax.swing.JFrame;
 
 public class Window {
 
+	// Main Window
 	private JFrame window;
+	// Drawing Pad
 	private Canvas canvas;
 	
 	private String windowTitle;
@@ -27,16 +29,16 @@ public class Window {
 		
 		window = new JFrame(windowTitle);
 		window.setSize(new Dimension(windowWidth, windowHeight));
-		window.setLocationRelativeTo(null);
+		window.setLocationRelativeTo(null); // Center the window
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		window.setResizable(false);
+		window.setResizable(false); // Don't resize
 		window.setVisible(true);
 		
 		canvas = new Canvas();
 		canvas.setPreferredSize(new Dimension(windowWidth, windowHeight));
 		canvas.setMinimumSize(new Dimension(windowWidth, windowHeight));
 		canvas.setMaximumSize(new Dimension(windowWidth, windowHeight));
-		canvas.setFocusable(false);
+		canvas.setFocusable(false); // false so we can receive user inputs
 		
 		window.add(canvas);
 		window.pack();

@@ -4,8 +4,10 @@ import java.awt.image.BufferedImage;
 
 public class SpriteSheet {
 
+	// The image containing all the frames
 	private BufferedImage sheet;
 	
+	// Frames
 	private BufferedImage[] images;
 	
 	public SpriteSheet(Sprite sheet, int frameWidth, int frameHeight){
@@ -22,7 +24,7 @@ public class SpriteSheet {
 		return images;
 	}
 	
-	public BufferedImage crop(int x, int y, int width, int height){
+	private BufferedImage crop(int x, int y, int width, int height){
 		return sheet.getSubimage(x, y, width, height);
 	}
 	

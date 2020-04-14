@@ -12,11 +12,20 @@ public class Circle {
         this.radius = radius;
     }
 
-    public boolean contains(Point p) {  return p.distance(center) <= radius; }
-
-    public double area()      { return Math.PI * radius * radius; }
-    public double perimeter() { return 2 * Math.PI * radius;      }
-
+    // Point in radius
+    public boolean contains(Point p) {  
+    	return p.distance(center) <= radius; 
+    }
+    
+    public double area() { 
+    	return Math.PI * radius * radius; 
+    }
+    
+    public double perimeter() { 
+    	return 2 * Math.PI * radius;     
+    }
+    
+    // Circle intersects another circle?
     public boolean intersects(Circle c) {
         return center.distance(c.center) <= radius + c.radius;
     }

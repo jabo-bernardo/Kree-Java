@@ -8,6 +8,7 @@ public class Sprite {
 	
 	public Sprite(String path) {
 		
+		// Loads image
 		this.image = ImageLoader.loadImage(path);
 		
 	}

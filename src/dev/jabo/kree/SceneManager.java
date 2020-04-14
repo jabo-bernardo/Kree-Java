@@ -19,10 +19,16 @@ public class SceneManager {
 	
 	public static void Update() {
 		if(SceneManager.getScene() != null) {
+			
+			// Update Scene
 			SceneManager.getScene().Update();
+			
+			// Update gameObject
 			for(GameObject obj : activeScene.gameObjects) {
 				obj.Update();
 			}
+			
+			// Update UI
 			for(UserInterface obj : activeScene.userInterfaces) {
 				obj.Update();
 			}
@@ -31,10 +37,16 @@ public class SceneManager {
 	
 	public static void Render(Graphics g) {
 		if(SceneManager.getScene() != null) {
+			
+			// Render Scene
 			SceneManager.getScene().Render(g);
+			
+			// Render GameObject
 			for(GameObject obj : activeScene.gameObjects) {
 				obj.Render(g);
 			}
+			
+			// Render UI
 			for(UserInterface obj : activeScene.userInterfaces) {
 				obj.Render(g);
 			}

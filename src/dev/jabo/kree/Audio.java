@@ -19,19 +19,12 @@ public class Audio {
         this.load();
     }
     
+    // Load file
     public void load() {
         this.sound = new File(this.path);
     }
     
-    public boolean isPlaying() {
-    	if(soundClip != null) {
-    		if(soundClip.isRunning()) {
-    			return true;
-    		}
-    	}
-        return false;
-    }
-    
+    // Play Loop
     public void play(final boolean loop) {
         try {
             this.soundClip = AudioSystem.getClip();
@@ -54,6 +47,7 @@ public class Audio {
         }
     }
     
+    // Play once
     public void play() {
         try {
             this.soundClip = AudioSystem.getClip();
@@ -75,6 +69,16 @@ public class Audio {
     
     public void stop() {
         this.soundClip.stop();
+    }
+    
+    // Getters
+    public boolean isPlaying() {
+    	if(soundClip != null) {
+    		if(soundClip.isRunning()) {
+    			return true;
+    		}
+    	}
+        return false;
     }
 
 }

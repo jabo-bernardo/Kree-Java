@@ -14,6 +14,7 @@ public class Vector2 {
 		this.y = y;
 	}
 	
+	// Returns the distance between two vectors
 	static int distance(Vector2 v1, Vector2 v2) {
 		return (int) Math.floor(
 			Math.sqrt(
@@ -23,6 +24,7 @@ public class Vector2 {
 		);
 	}
 	
+	// Vector Maths
 	public void add(Vector2 vector) {
 		this.x += vector.x;
 		this.y += vector.y;
@@ -43,6 +45,7 @@ public class Vector2 {
 		this.y *= vector.y;
 	}
 	
+	// Move towards a vector
 	public void moveTowards(Vector2 to, float speed) {
 		if(to == null)
 			return;

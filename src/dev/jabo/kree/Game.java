@@ -5,6 +5,12 @@ import java.awt.image.BufferStrategy;
 
 public class Game implements Runnable {	
 	
+	/*
+	 * 
+	 * Where everything started.
+	 * 
+	 * */
+	
 	private Thread thread;
 	private boolean gameRunning;
 	
@@ -20,7 +26,7 @@ public class Game implements Runnable {
 	public Game(Window window) {
 		this.window = window;
 	}
-
+	
 	public void Initialize() {
 		window.getWindow().addKeyListener(Input);
 		window.getCanvas().addMouseListener(Input);
@@ -52,6 +58,7 @@ public class Game implements Runnable {
 		
 	}
 	
+	// Start the game
 	public synchronized void start() {
 		if(gameRunning)
 			return;
@@ -60,6 +67,7 @@ public class Game implements Runnable {
 		thread.run();
 	}
 	
+	// End the game (Will close the window)
 	public synchronized void stop() {
 		if(!gameRunning)
 			return;
@@ -73,6 +81,7 @@ public class Game implements Runnable {
 		System.exit(0);
 	}
 	
+	// Threading
 	@Override
 	public void run() {
 		
@@ -86,7 +95,8 @@ public class Game implements Runnable {
 		long lastTime = System.nanoTime();
 		long timer = 0;
 		int ticks = 0;
-			
+		
+		// Gameloop
 		while(gameRunning) {
 			
 			now = System.nanoTime();

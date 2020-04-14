@@ -7,6 +7,14 @@ import dev.jabo.kree.components.ParticleSystem;
 
 public class Particle {
 	
+	/*
+	 * 
+	 * Particle System's Particles
+	 * 
+	 * TODO: Optimazation & Customization
+	 * 
+	 * */
+	
 	public static final int DIRECTION_360DEG = 0;
 	public static final int DIRECTION_45DEG = 4;
 	public static final int DIRECTION_90DEG = 1;

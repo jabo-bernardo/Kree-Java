@@ -3,9 +3,10 @@ package dev.jabo.kree;
 import java.awt.Graphics;
 
 public class GameObject {
-
+	
 	public Transform transform = new Transform();
 	
+	// List of components
 	private Component[] components = new Component[0];
 	
 	public float id;
@@ -32,6 +33,7 @@ public class GameObject {
 	public void Update() {
 		for(int i = 0; i < components.length; i++) {
 			if(!components[i].disabled) {
+				// Updates components
 				components[i].Update();
 			}
 		}
@@ -40,11 +42,13 @@ public class GameObject {
 	public void Render(Graphics g) {
 		for(int i = 0; i < components.length; i++) {
 			if(!components[i].disabled) {
+				// Updates components
 				components[i].Render(g);
 			}
 		}		
 	}
 	
+	// Get reference of component
 	public Component getComponent(String componentName) {
 		for(int i = 0; i < components.length; i++) {
 			if(components[i].name == componentName) {
@@ -54,6 +58,7 @@ public class GameObject {
 		return null;
 	}
 	
+	// Add component
 	public void addComponent(Component component) {
 		
 		component.gameObject = this;
@@ -78,6 +83,7 @@ public class GameObject {
 		transform.scale = scale;
 	}
 	
+	// removes the GameObject from the scene
 	public void destroy() {
 		for(int i = 0; i < parentScene.gameObjects.length; i++) {
 			if(parentScene.gameObjects[i].id == this.id) {
@@ -100,6 +106,7 @@ public class GameObject {
 		}
 	}
 	
+	// Get the scene where this object is included
 	public Scene getParentScene() {
 		return this.parentScene;
 	}
