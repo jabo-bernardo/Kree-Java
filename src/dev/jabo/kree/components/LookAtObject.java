@@ -17,7 +17,7 @@ public class LookAtObject extends Component {
 
 	@Override
 	public void Update() {
-		gameObject.transform.rotation =  (float) (Math.atan2(gameObject.transform.position.y - target.y, gameObject.transform.position.x - target.x) - Math.PI / 2);;
+		gameObject.transform.rotation =  (float) Math.toDegrees((Math.atan2(gameObject.transform.position.y - target.y, gameObject.transform.position.x - target.x) - Math.PI / 2));
 	}
 
 	@Override

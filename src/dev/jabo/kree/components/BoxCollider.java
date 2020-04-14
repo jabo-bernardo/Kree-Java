@@ -1,11 +1,9 @@
 package dev.jabo.kree.components;
 
 import java.awt.Graphics;
-import java.awt.Point;
 import java.awt.Rectangle;
 
 import dev.jabo.kree.Component;
-import dev.jabo.kree.Vector2;
 
 public class BoxCollider extends Component {
 
@@ -32,8 +30,14 @@ public class BoxCollider extends Component {
 		
 	}
 	
-	public boolean contains(Vector2 vector2) {
-		return getCollider().contains(new Point(vector2.x, vector2.y));
+	public boolean collidingWith(BoxCollider col) {
+		
+		if(collider.contains(col.getCollider())) {
+			return true;
+		}
+		
+		return false;
+		
 	}
 	
 	public Rectangle getCollider() {

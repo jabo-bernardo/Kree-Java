@@ -27,6 +27,7 @@ public class MeshRenderer extends Component {
 		AffineTransform oldTransform = g2d.getTransform();
 		g2d.rotate(Math.toRadians(gameObject.transform.rotation), gameObject.transform.position.x, gameObject.transform.position.y);
 	    if(gameObject != null) {
+	    	g2d.setColor(color);
 	    	g2d.fillRect(gameObject.transform.position.x - 16, gameObject.transform.position.y - 16, gameObject.transform.scale.x, gameObject.transform.scale.y);
 		}
 	    g2d.setTransform(oldTransform);
