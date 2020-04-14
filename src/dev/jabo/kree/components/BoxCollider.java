@@ -9,6 +9,8 @@ public class BoxCollider extends Component {
 
 	private Rectangle collider;
 	
+	public boolean trigger;
+	
 	public BoxCollider() {
 		this.name = "Box Collider";
 	}

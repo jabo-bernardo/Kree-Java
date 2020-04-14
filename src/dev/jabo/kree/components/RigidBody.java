@@ -25,6 +25,8 @@ public class RigidBody extends Component {
 			if(obj.id == gameObject.id)
 				continue;
 			if(obj.getComponent("Box Collider") != null) {
+				if(((BoxCollider) obj.getComponent("Box Collider")).trigger)
+					return;
 				Vector2 gameObjectPos = gameObject.transform.position;
 				Vector2 colliderObjectPos = obj.transform.position;
 				Vector2 gameObjectScale = gameObject.transform.scale;
