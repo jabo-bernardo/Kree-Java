@@ -11,7 +11,7 @@ public class Particle {
 	 * 
 	 * Particle System's Particles
 	 * 
-	 * TODO: Optimazation & Customization
+	 * TODO: Optimization & Customization
 	 * 
 	 * */
 	
