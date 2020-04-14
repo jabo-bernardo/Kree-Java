@@ -34,7 +34,7 @@ public class BoxCollider extends Component {
 	
 	public boolean collidingWith(BoxCollider col) {
 		if(collider == null) {
-			return true;
+			return false;
 		}
 		if(collider.contains(col.getCollider())) {
 			return true;
