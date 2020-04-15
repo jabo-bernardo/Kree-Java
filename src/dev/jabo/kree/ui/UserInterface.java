@@ -8,7 +8,7 @@ import dev.jabo.kree.Vector2;
 
 public abstract class UserInterface {
 	
-	public Transform transform = new Transform();
+	protected Transform transform = new Transform();
 
 	public abstract void Update();
 	
@@ -27,20 +27,8 @@ public abstract class UserInterface {
 	
 	// Getters and Setters
 	
-	public Vector2 getScale() {
-		return transform.scale;
-	}
-	
-	public Vector2 getPosition() {
-		return transform.position;
-	}
-	
-	public void setPosition(Vector2 position) {
-		transform.position = position;
-	}
-	
-	public void setScale(Vector2 scale) {
-		transform.scale = scale;
+	public Transform getTransform() {
+		return transform;
 	}
 	
 }

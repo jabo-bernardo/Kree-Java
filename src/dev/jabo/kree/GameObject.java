@@ -4,13 +4,13 @@ import java.awt.Graphics;
 
 public class GameObject {
 	
-	public Transform transform = new Transform();
+	private Transform transform = new Transform();
 	
 	// List of components
 	private Component[] components = new Component[0];
 	
-	public float id;
-	public String name;
+	private float id;
+	private String name;
 	
 	private Scene parentScene;
 	
@@ -73,16 +73,6 @@ public class GameObject {
 		// End
 	}
 	
-	// Set GameObject's position
-	public void setPosition(Vector2 position) {
-		transform.position = position;
-	}
-	
-	// Set GameObject's dimension
-	public void setScale(Vector2 scale) {
-		transform.scale = scale;
-	}
-	
 	// removes the GameObject from the scene
 	public void destroy() {
 		for(int i = 0; i < parentScene.gameObjects.length; i++) {
@@ -109,6 +99,18 @@ public class GameObject {
 	// Get the scene where this object is included
 	public Scene getParentScene() {
 		return this.parentScene;
+	}
+	
+	public Transform getTransform() {
+		return transform;
+	}
+	
+	public float getID() {
+		return id;
+	}
+	
+	public String getName() {
+		return name;
 	}
 	
 }

@@ -17,7 +17,7 @@ public class LookAtObject extends Component {
 
 	@Override
 	public void Update() {
-		gameObject.transform.rotation =  (float) Math.toDegrees((Math.atan2(gameObject.transform.position.y - target.y, gameObject.transform.position.x - target.x) - Math.PI / 2));
+		gameObject.getTransform().setRotation((float) Math.toDegrees((Math.atan2(gameObject.getTransform().getPosition().getY() - target.getY(), gameObject.getTransform().getPosition().getX() - target.getX()) - Math.PI / 2)));
 	}
 
 	@Override
@@ -26,7 +26,7 @@ public class LookAtObject extends Component {
 	}
 	
 	public void setTarget(GameObject target) {
-		this.target = target.transform.position;
+		this.target = target.getTransform().getPosition();
 		this.objectTarget = target;
 	}
 	

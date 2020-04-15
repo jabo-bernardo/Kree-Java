@@ -4,13 +4,17 @@ import java.awt.image.BufferedImage;
 
 public class Sprite {
 
-	public BufferedImage image;
+	private BufferedImage image;
 	
 	public Sprite(String path) {
 		
 		// Loads image
 		this.image = ImageLoader.loadImage(path);
 		
+	}
+	
+	public BufferedImage getImage() {
+		return image;
 	}
 	
 }

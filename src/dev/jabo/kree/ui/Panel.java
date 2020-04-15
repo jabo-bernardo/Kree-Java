@@ -12,8 +12,8 @@ public class Panel extends UserInterface {
 	
 	public Panel(Scene parentScene, Vector2 position, Vector2 scale) {
 		
-		transform.position = position;
-		transform.scale = scale;
+		transform.setPosition(position);
+		transform.setScale(scale);
 		
 		AddToScene(parentScene);
 		
@@ -28,7 +28,7 @@ public class Panel extends UserInterface {
 	public void Render(Graphics g) {
 		
 		g.setColor(color);		
-		g.fillRect(transform.position.x, transform.position.y, transform.scale.x, transform.scale.y);
+		g.fillRect(transform.getPosition().getX(), transform.getPosition().getY(), transform.getScale().getX(), transform.getScale().getY());
 		
 	}
 	

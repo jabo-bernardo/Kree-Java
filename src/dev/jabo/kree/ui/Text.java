@@ -21,10 +21,10 @@ public class Text extends UserInterface {
 	
 	public Text(Scene parentScene, String text, Vector2 position, int width) {
 		
-		transform.position = position;
+		transform.setPosition(position);
 		this.text = text;
 		
-		transform.scale = new Vector2(width, 0);
+		transform.setScale(new Vector2(width, 0));
 		
 		AddToScene(parentScene);
 	}
@@ -39,7 +39,7 @@ public class Text extends UserInterface {
 	@Override
 	public void Render(Graphics g) {
 		if(showBorder) {
-			g.drawRect(transform.position.x, transform.position.y, transform.scale.x, height);
+			g.drawRect(transform.getPosition().getX(), transform.getPosition().getY(), transform.getScale().getX(), height);
 		}
 		
 		g.setFont(this.font);
@@ -64,7 +64,7 @@ public class Text extends UserInterface {
 		for(String str : s) {
 			int width = g.getFontMetrics(font).stringWidth(last); 
 			curWidth += width + (col * 2);
-			if(curWidth > transform.scale.x) {
+			if(curWidth > transform.getScale().getX()) {
 				endl = true;
 			}
 			if(endl) {
@@ -75,7 +75,7 @@ public class Text extends UserInterface {
 				last = "";
 			}
 			last = str;
-			g.drawString(str, transform.position.x + (curWidth), transform.position.y + font.getSize() * line);
+			g.drawString(str, transform.getPosition().getX() + (curWidth), transform.getPosition().getY() + font.getSize() * line);
 			col++;
 			this.height = font.getSize() * line;
 		}

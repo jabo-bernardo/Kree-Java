@@ -19,9 +19,9 @@ public class Game implements Runnable {
 	
 	private Window window;
 	
-	public static Input Input = new Input();
+	private static Input Input = new Input();
 	
-	public boolean debug = true;
+	private boolean debug = true;
 	
 	public Game(Window window) {
 		this.window = window;
@@ -123,6 +123,14 @@ public class Game implements Runnable {
 		
 		stop();
 		
+	}
+	
+	public void setDebug(boolean debug) {
+		this.debug = debug;
+	}
+	
+	public Window getWindow() {
+		return window;
 	}
 	
 	

@@ -28,10 +28,10 @@ public class TextInput extends UserInterface {
 	
 	public TextInput(Scene parentScene, Vector2 position, Vector2 scale) {
 		
-		transform.position = position;
-		transform.scale = scale;
+		transform.setPosition(position);
+		transform.setScale(scale);
 		
-		collider = new Rectangle(position.x, position.y, scale.x, scale.y);
+		collider = new Rectangle(position.getX(), position.getY(), scale.getX(), scale.getY());
 		
 		AddToScene(parentScene);
 		
@@ -43,8 +43,13 @@ public class TextInput extends UserInterface {
 	@Override
 	public void Update() {
 		
+		collider.x = transform.getPosition().getX();
+		collider.y = transform.getPosition().getY();
+		collider.width = transform.getScale().getX();
+		collider.height = transform.getScale().getY();
+		
 		if(Input.leftMouseDown) {
-			if(collider.contains(new Point(Input.getMouse().x, Input.getMouse().y))) {
+			if(collider.contains(new Point(Input.getMouse().getX(), Input.getMouse().getY()))) {
 				selected = true;
 			} else {
 				selected = false;
@@ -82,7 +87,7 @@ public class TextInput extends UserInterface {
 		if(selected) {
 			g.setColor(selectedColor);
 		}
-		g.fillRect(transform.position.x, transform.position.y, transform.scale.x, transform.scale.y);
+		g.fillRect(transform.getPosition().getX(), transform.getPosition().getY(), transform.getScale().getX(), transform.getScale().getY());
 		g.setColor(foregroundColor);
 		g.setFont(font);
 		drawTextLineByLine(g);
@@ -103,14 +108,14 @@ public class TextInput extends UserInterface {
 		for(String str : s) {
 			int width = g.getFontMetrics(font).stringWidth(last); 
 			curWidth += width + (col * 2);
-			if(curWidth > transform.scale.x) {
+			if(curWidth > transform.getScale().getX()) {
 				endl = true;
 			}
 			if(endl) {
 				return;
 			}
 			last = str;
-			g.drawString(str, transform.position.x + (curWidth) + ((transform.scale.y - font.getSize()) / 2), transform.position.y + font.getSize() * line + ((transform.scale.y - font.getSize()) / 2));
+			g.drawString(str, transform.getPosition().getX() + (curWidth) + ((transform.getScale().getY() - font.getSize()) / 2), transform.getPosition().getY() + font.getSize() * line + ((transform.getScale().getY() - font.getSize()) / 2));
 			col++;
 		}
 		

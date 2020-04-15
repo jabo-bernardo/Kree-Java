@@ -111,7 +111,7 @@ public class Input implements KeyListener, MouseMotionListener, MouseListener {
 	public static boolean MouseIn(GameObject obj) {		
 		if(obj.getComponent("Box Collider") != null) {
 			BoxCollider col = (BoxCollider) obj.getComponent("Box Collider");
-			if(col.getCollider().contains(new Point(getMouse().x, getMouse().y))) {
+			if(col.getCollider().contains(new Point(getMouse().getX(), getMouse().getY()))) {
 				return true;
 			}
 		}		

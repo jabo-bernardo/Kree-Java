@@ -11,7 +11,7 @@ public class SpriteSheet {
 	private BufferedImage[] images;
 	
 	public SpriteSheet(Sprite sheet, int frameWidth, int frameHeight){
-		this.sheet = sheet.image;
+		this.sheet = sheet.getImage();
 		
 		images = new BufferedImage[this.sheet.getWidth() / frameWidth];
 		for(int x = 0; x < this.sheet.getWidth() / frameWidth; x++) {

@@ -11,7 +11,7 @@ public abstract class Component {
 	protected String name;
 	
 	// If true component will not update nor render
-	public boolean disabled;
+	protected boolean disabled;
 	
 	public abstract void Update();
 	

@@ -24,7 +24,7 @@ public class Animator extends Component {
 	@Override
 	public void Render(Graphics g) {
 		if(activeAnimation != null) {
-			g.drawImage(activeAnimation.getCurrentFrame(), gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.scale.x, gameObject.transform.scale.y, null);
+			g.drawImage(activeAnimation.getCurrentFrame(), gameObject.getTransform().getPosition().getX(), gameObject.getTransform().getPosition().getY(), gameObject.getTransform().getScale().getX(), gameObject.getTransform().getScale().getY(), null);
 		}
 	}
 	

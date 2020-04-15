@@ -14,25 +14,26 @@ public class ProgressBar extends UserInterface {
 	private Color foregroundColor = new Color(255, 125, 25);
 	
 	private int padding = 4;
-
+	
+	// Constructors
 	public ProgressBar(Scene parentScene) {		
 		
-		transform.position = new Vector2(0, 0);
-		transform.scale = new Vector2(128, 24);
+		transform.setPosition(new Vector2(0, 0));
+		transform.setScale(new Vector2(128, 24));
 		
 		AddToScene(parentScene);		
 	}
 	
 	public ProgressBar(Scene parentScene, Vector2 position) {
 		
-		transform.position = position;		
+		transform.setPosition(position);		
 		AddToScene(parentScene);		
 	}
 	
 	public ProgressBar(Scene parentScene, Vector2 position, Vector2 scale) {
 		
-		transform.position = position;
-		transform.scale = scale;
+		transform.setPosition(position);
+		transform.setScale(scale);
 		
 		AddToScene(parentScene);		
 	}
@@ -51,9 +52,9 @@ public class ProgressBar extends UserInterface {
 	public void Render(Graphics g) {
 		
 		g.setColor(backgroundColor);
-		g.fillRect(transform.position.x, transform.position.y, transform.scale.x, transform.scale.y);		
+		g.fillRect(transform.getPosition().getX(), transform.getPosition().getY(), transform.getScale().getX(), transform.getScale().getY());		
 		g.setColor(foregroundColor);
-		g.fillRect(transform.position.x + padding, transform.position.y + padding, (int) ((value / maxValue) * (transform.scale.x - (padding * 2))), transform.scale.y - (padding * 2));
+		g.fillRect(transform.getPosition().getX() + padding, transform.getPosition().getY() + padding, (int) ((value / maxValue) * (transform.getScale().getX() - (padding * 2))), transform.getScale().getY() - (padding * 2));
 	}
 	
 	// Misc

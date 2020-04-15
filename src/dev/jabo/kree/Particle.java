@@ -34,8 +34,8 @@ public class Particle {
 	
 	private int id;
 	
-	float xMove;
-	float yMove;
+	private float xMove;
+	private float yMove;
 
 	public Particle(ParticleSystem parent, int id) {
 		

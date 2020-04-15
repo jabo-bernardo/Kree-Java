@@ -7,7 +7,7 @@ public class Vector2 {
 	public static Vector2 up = new Vector2(0, -1);
 	public static Vector2 down = new Vector2(0, 1);
 
-	public int x, y;
+	private int x, y;
 	
 	public Vector2(int x, int y) {
 		this.x = x;
@@ -61,6 +61,38 @@ public class Vector2 {
 	    this.x += fX * step;
 	    this.y += fY * step;
 	
+	}
+	
+	public void subtractX(int x) {
+		this.x -= x;
+	}
+	
+	public void subtractY(int y) {
+		this.y -= y;
+	}
+	
+	public void addX(int x) {
+		this.x += x;
+	}
+	
+	public void addY(int y) {
+		this.y += y;
+	}
+	
+	public void setX(int x) {
+		this.x = x;
+	}
+	
+	public void setY(int y) {
+		this.y = y;
+	}
+	
+	public int getY() {
+		return y;
+	}
+	
+	public int getX() {
+		return x;
 	}
 	
 }

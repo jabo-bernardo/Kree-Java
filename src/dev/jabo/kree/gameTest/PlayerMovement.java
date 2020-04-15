@@ -20,19 +20,19 @@ public class PlayerMovement extends Component {
 		
 		// Left key
 		if(Input.isKeyPressed(37)) {
-			gameObject.transform.translate(Vector2.left);
+			gameObject.getTransform().translate(Vector2.left);
 		}
 		// Right key
 		if(Input.isKeyPressed(39)) {
-			gameObject.transform.translate(Vector2.right);
+			gameObject.getTransform().translate(Vector2.right);
 		}
 		// Up key
 		if(Input.isKeyPressed(38)) {
-			gameObject.transform.translate(Vector2.up);
+			gameObject.getTransform().translate(Vector2.up);
 		}
 		// Down key
 		if(Input.isKeyPressed(40)) {
-			gameObject.transform.translate(Vector2.down);
+			gameObject.getTransform().translate(Vector2.down);
 		}
 		
 	}

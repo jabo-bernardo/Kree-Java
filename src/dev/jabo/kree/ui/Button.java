@@ -31,8 +31,8 @@ public class Button extends UserInterface {
 		this.text = text;
 		
 		transform = new Transform();
-		transform.position = position;
-		transform.scale = scale;
+		transform.setPosition(position);
+		transform.setScale(scale);
 		
 		backgroundColor = Color.GRAY;
 		foregroundColor = Color.BLACK;
@@ -50,13 +50,13 @@ public class Button extends UserInterface {
 	@Override
 	public void Update() {
 		
-		collider.x = transform.position.x;
-		collider.y = transform.position.y;
-		collider.width = transform.scale.x;
-		collider.height = transform.scale.y;
+		collider.x = transform.getPosition().getX();
+		collider.y = transform.getPosition().getY();
+		collider.width = transform.getScale().getX();
+		collider.height = transform.getScale().getY();
 		
-		mousePoint.x = Input.getMouse().x;
-		mousePoint.y = Input.getMouse().y;
+		mousePoint.x = Input.getMouse().getX();
+		mousePoint.y = Input.getMouse().getY();
 		
 		if(collider.contains(mousePoint)) {
 			hovering = true;
@@ -81,10 +81,10 @@ public class Button extends UserInterface {
 		if(hovering) {
 			g.setColor(hoverColor);
 		}
-		g.fillRect(transform.position.x, transform.position.y, transform.scale.x, transform.scale.y);
+		g.fillRect(transform.getPosition().getX(), transform.getPosition().getY(), transform.getScale().getX(), transform.getScale().getY());
 		g.setColor(foregroundColor);
 		g.setFont(font);
-		g.drawString(text, transform.position.x + ((transform.scale.x / 2) - (g.getFontMetrics(font).stringWidth(text) / 2)), (transform.position.y + font.getSize()- 3) + ((transform.scale.y / 2) - (font.getSize() / 2)));
+		g.drawString(text, transform.getPosition().getX() + ((transform.getScale().getX() / 2) - (g.getFontMetrics(font).stringWidth(text) / 2)), (transform.getPosition().getY() + font.getSize()- 3) + ((transform.getScale().getY() / 2) - (font.getSize() / 2)));
 		
 	}
 	

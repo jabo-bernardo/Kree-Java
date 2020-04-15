@@ -22,65 +22,65 @@ public class RigidBody extends Component {
 		this.yVelocity += acceleration * mass;
 		
 		for(GameObject obj : gameObject.getParentScene().gameObjects) {
-			if(obj.id == gameObject.id)
+			if(obj.getID() == gameObject.getID())
 				continue;
 			if(obj.getComponent("Box Collider") != null) {
-				Vector2 gameObjectPos = gameObject.transform.position;
-				Vector2 colliderObjectPos = obj.transform.position;
-				Vector2 gameObjectScale = gameObject.transform.scale;
-				Vector2 colliderObjectScale = obj.transform.scale;
+				Vector2 gameObjectPos = gameObject.getTransform().getPosition();
+				Vector2 colliderObjectPos = obj.getTransform().getPosition();
+				Vector2 gameObjectScale = gameObject.getTransform().getScale();
+				Vector2 colliderObjectScale = obj.getTransform().getScale();
 				
-				if(gameObjectPos.x + gameObjectScale.x < colliderObjectPos.x) {
+				if(gameObjectPos.getX() + gameObjectScale.getX() < colliderObjectPos.getX()) {
 					continue;
 				}
 				
-				if(gameObjectPos.x > colliderObjectPos.x + colliderObjectScale.x) {
+				if(gameObjectPos.getX() > colliderObjectPos.getX() + colliderObjectScale.getX()) {
 					continue;
 				}
 				
-				if(gameObjectPos.y > colliderObjectPos.y + colliderObjectScale.y) {
+				if(gameObjectPos.getY() > colliderObjectPos.getY() + colliderObjectScale.getY()) {
 					continue;
 				}
 				
-				if(gameObjectPos.y + gameObjectScale.y < colliderObjectPos.y) {
+				if(gameObjectPos.getY() + gameObjectScale.getY() < colliderObjectPos.getY()) {
 					continue;
 				}
 				
-				if(gameObjectPos.y + gameObjectScale.y > colliderObjectPos.y + 16 && gameObjectPos.y < colliderObjectPos.y + colliderObjectScale.y - 16) {
+				if(gameObjectPos.getY() + gameObjectScale.getY() > colliderObjectPos.getY() + 16 && gameObjectPos.getY() < colliderObjectPos.getY() + colliderObjectScale.getY() - 16) {
 					if(((BoxCollider) obj.getComponent("Box Collider")).trigger)
 						continue;
-					if(gameObjectPos.x < colliderObjectPos.x) {
+					if(gameObjectPos.getX() < colliderObjectPos.getX()) {
 						// Right
-						gameObjectPos.x = colliderObjectPos.x - gameObjectScale.x - 1;
+						gameObjectPos.setX(colliderObjectPos.getX() - gameObjectScale.getX() - 1);
 						return;
 					}
-					if(gameObjectPos.x + gameObjectScale.x > colliderObjectPos.x) {
+					if(gameObjectPos.getX() + gameObjectScale.getX() > colliderObjectPos.getX()) {
 						// Left
-						gameObjectPos.x = colliderObjectPos.x + colliderObjectScale.x + 1;
+						gameObjectPos.setX(colliderObjectPos.getX() + colliderObjectScale.getX() + 1);
 						return;
 					}
 				}
 				
-				if(gameObjectPos.y + gameObjectScale.y >= colliderObjectPos.y) {
+				if(gameObjectPos.getY() + gameObjectScale.getY() >= colliderObjectPos.getY()) {
 					if(((BoxCollider) obj.getComponent("Box Collider")).trigger)
 						continue;
 					// Bottom
-					if(gameObjectPos.y + gameObjectScale.y > colliderObjectPos.y) {
-						if(gameObjectPos.y + gameObjectScale.y < colliderObjectPos.y + 16) {
-							gameObjectPos.y -= 1;
+					if(gameObjectPos.getY() + gameObjectScale.getY() > colliderObjectPos.getY()) {
+						if(gameObjectPos.getY() + gameObjectScale.getY() < colliderObjectPos.getY() + 16) {
+							gameObjectPos.subtractY(1);;
 						}
 					}
 					// Top
-					if(gameObjectPos.y + gameObjectScale.y > colliderObjectPos.y) {
-						if(gameObjectPos.y + gameObjectScale.y > colliderObjectPos.y + colliderObjectScale.y - 16) {
-							gameObjectPos.y += 1;
+					if(gameObjectPos.getY() + gameObjectScale.getY() > colliderObjectPos.getY()) {
+						if(gameObjectPos.getY() + gameObjectScale.getY() > colliderObjectPos.getY() + colliderObjectScale.getY() - 16) {
+							gameObjectPos.addY(1);;
 						}
 					}
 					this.yVelocity = 0;
 				}
 			}
 		}
-		gameObject.transform.translate(new Vector2((int) xVelocity, (int) yVelocity));
+		gameObject.getTransform().translate(new Vector2((int) xVelocity, (int) yVelocity));
 		xVelocity = 0;
 		
 	}

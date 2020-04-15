@@ -18,12 +18,12 @@ public class BoxCollider extends Component {
 	@Override
 	public void Update() {
 		if(gameObject != null) {
-			collider = new Rectangle(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.scale.x, gameObject.transform.scale.y);
+			collider = new Rectangle(gameObject.getTransform().getPosition().getX() - (gameObject.getTransform().getScale().getX() / 2), gameObject.getTransform().getPosition().getY() - (gameObject.getTransform().getScale().getX() / 2), gameObject.getTransform().getScale().getX(), gameObject.getTransform().getScale().getY());
 		}
-		collider.x = gameObject.transform.position.x;
-		collider.y = gameObject.transform.position.y;
-		collider.width = gameObject.transform.scale.x;
-		collider.height = gameObject.transform.scale.y;
+		collider.x = gameObject.getTransform().getPosition().getX();
+		collider.y = gameObject.getTransform().getPosition().getY();
+		collider.width = gameObject.getTransform().getScale().getX();
+		collider.height = gameObject.getTransform().getScale().getY();
 		
 	}
 

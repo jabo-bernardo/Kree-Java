@@ -25,10 +25,10 @@ public class MeshRenderer extends Component {
 	public void Render(Graphics g) {
 		Graphics2D g2d = (Graphics2D)g;
 		AffineTransform oldTransform = g2d.getTransform();
-		g2d.rotate(Math.toRadians(gameObject.transform.rotation), gameObject.transform.position.x, gameObject.transform.position.y);
+		g2d.rotate(Math.toRadians(gameObject.getTransform().getRotation()), gameObject.getTransform().getPosition().getX(), gameObject.getTransform().getPosition().getY());
 	    if(gameObject != null) {
 	    	g2d.setColor(color);
-	    	g2d.fillRect(gameObject.transform.position.x - 16, gameObject.transform.position.y - 16, gameObject.transform.scale.x, gameObject.transform.scale.y);
+	    	g2d.fillRect(gameObject.getTransform().getPosition().getX() - (gameObject.getTransform().getScale().getX() / 2), gameObject.getTransform().getPosition().getY() - (gameObject.getTransform().getScale().getY() / 2), gameObject.getTransform().getScale().getX(), gameObject.getTransform().getScale().getY());
 		}
 	    g2d.setTransform(oldTransform);
 	}
