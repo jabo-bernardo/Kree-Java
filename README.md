@@ -1,17 +1,18 @@
-# Welcome to Kree
-## Getting Started?
-- [Download](https://github.com/jabo-bernardo/Kree-Java/releases) <br>
-- [Documentation](https://jabo-bernardo.github.io/kree-documentation/)
-- [Discord](https://discord.gg/m2hYa6F)
-- [Kree YouTube](https://www.youtube.com/channel/UCIcwkr2LgOXrCa7Ou0B9yeg)
-- [Sample Games using Kree](https://github.com/jabo-bernardo/Kree-Sample)
+---
+description: A Java Game Engine developed using Pure Java
+---
 
-## Kree Java
-- Kree Java is a simple and lightweight 2D Java Game library yet has many features that can make a decent 2D game. Kree's components is designed simple so beginners can follow along and make awesome games with it.
+# Welcome to Kree Java
 
-## Kree Java Road Map
-Month | Features
---- | ---
-April| Audio Implementation, Particle System
-April | Physics Engine, Collision Detection
-April | User Interface Implementation
+## What is Kree?
+
+Kree Java is a simple and lightweight 2D Java Game library yet has many features that can make a powerful 2D game. Kree's components is designed simple so beginners can follow along and make awesome game with the engine.
+
+## Why develop in Kree?
+
+If you're just starting out making games you should definitely start here. Kree provides all of the back-end stuffs for you you don't need to worry how to load music/ sound in your game Kree will handle it for you!
+
+## Why should I choose Kree over ... 
+
+Kree is mainly designed for beginners it's syntax is minimalist and easy to understand and it is pretty similar to Unity's syntax so If you've used Unity before it's an advantage for you. Kree handles everything for you to develop a working game you just need to design the logic of your game and Kree will handle the rest. Kree is open source you can freely change the components behavior easily
+
