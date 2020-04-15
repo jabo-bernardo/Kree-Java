@@ -28,7 +28,7 @@ public class Panel extends UserInterface {
 	public void Render(Graphics g) {
 		
 		g.setColor(color);		
-		g.fillRect(transform.position.x, transform.position.y, transform.scale.x, transform.scale.x);
+		g.fillRect(transform.position.x, transform.position.y, transform.scale.x, transform.scale.y);
 		
 	}
 	

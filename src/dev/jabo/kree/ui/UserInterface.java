@@ -8,7 +8,7 @@ import dev.jabo.kree.Vector2;
 
 public abstract class UserInterface {
 	
-	protected Transform transform = new Transform();
+	public Transform transform = new Transform();
 
 	public abstract void Update();
 	

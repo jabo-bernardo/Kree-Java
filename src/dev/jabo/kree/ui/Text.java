@@ -17,7 +17,7 @@ public class Text extends UserInterface {
 	
 	private boolean showBorder = false;
 	
-	private Color color = Color.black;
+	private Color color = new Color(12, 12, 12);
 	
 	public Text(Scene parentScene, String text, Vector2 position, int width) {
 		

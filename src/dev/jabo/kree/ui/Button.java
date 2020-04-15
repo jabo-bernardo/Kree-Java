@@ -60,12 +60,14 @@ public class Button extends UserInterface {
 		
 		if(collider.contains(mousePoint)) {
 			hovering = true;
-			if(!clicked) {
-				if(Input.leftMouseDown) {
-					clicked = true;
-				} else {
-					clicked = false;
-				}
+			if(Input.leftMouseDown) {
+				
+				clicked = true;
+				
+			} else {
+				
+				clicked = false;
+				
 			}
 		} else {
 			hovering = false;
