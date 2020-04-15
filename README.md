@@ -16,3 +16,18 @@ If you're just starting out making games you should definitely start here. Kree 
 
 Kree is mainly designed for beginners it's syntax is minimalist and easy to understand and it is pretty similar to Unity's syntax so If you've used Unity before it's an advantage for you. Kree handles everything for you to develop a working game you just need to design the logic of your game and Kree will handle the rest. Kree is open source you can freely change the components behavior easily
 
+## Features
+
+* Rendering
+* Asset Loading
+* Game Loop
+* Audio
+* Animation
+* Sprite
+* Scenes
+* Scene Management
+* User Input
+* User Interface
+* Basic Physics
+* Vectors
+
