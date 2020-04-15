@@ -11,8 +11,6 @@ import dev.jabo.kree.Scene;
 import dev.jabo.kree.Vector2;
 
 public class TextInput extends UserInterface {
-
-	private Vector2 scale;
 	
 	private Color backgroundColor = new Color(200, 200, 200);
 	private Color foregroundColor = Color.BLACK;
@@ -30,8 +28,8 @@ public class TextInput extends UserInterface {
 	
 	public TextInput(Scene parentScene, Vector2 position, Vector2 scale) {
 		
-		this.position = position;
-		this.scale = scale;
+		transform.position = position;
+		transform.scale = scale;
 		
 		collider = new Rectangle(position.x, position.y, scale.x, scale.y);
 		
@@ -84,7 +82,7 @@ public class TextInput extends UserInterface {
 		if(selected) {
 			g.setColor(selectedColor);
 		}
-		g.fillRect(position.x, position.y, scale.x, scale.y);
+		g.fillRect(transform.position.x, transform.position.y, transform.scale.x, transform.scale.y);
 		g.setColor(foregroundColor);
 		g.setFont(font);
 		drawTextLineByLine(g);
@@ -105,14 +103,14 @@ public class TextInput extends UserInterface {
 		for(String str : s) {
 			int width = g.getFontMetrics(font).stringWidth(last); 
 			curWidth += width + (col * 2);
-			if(curWidth > this.scale.x) {
+			if(curWidth > transform.scale.x) {
 				endl = true;
 			}
 			if(endl) {
 				return;
 			}
 			last = str;
-			g.drawString(str, this.position.x + (curWidth) + ((scale.y - font.getSize()) / 2), this.position.y + font.getSize() * line + ((scale.y - font.getSize()) / 2));
+			g.drawString(str, transform.position.x + (curWidth) + ((transform.scale.y - font.getSize()) / 2), transform.position.y + font.getSize() * line + ((transform.scale.y - font.getSize()) / 2));
 			col++;
 		}
 		
@@ -132,24 +130,8 @@ public class TextInput extends UserInterface {
 		this.selectedColor = selectedColor;
 	}
 	
-	public void setPosition(Vector2 position) {
-		this.position = position;
-	}
-	
-	public void setScale(Vector2 scale) {
-		this.scale = scale;
-	}
-	
 	public String getValue() {
 		return value;
-	}
-	
-	public Vector2 setScale() {
-		return scale;
-	}
-	
-	public Vector2 getPosition() {
-		return position;
 	}
 
 }

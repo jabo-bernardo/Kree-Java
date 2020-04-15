@@ -8,9 +8,6 @@ import dev.jabo.kree.Vector2;
 
 public class ProgressBar extends UserInterface {
 	
-	private Vector2 position = new Vector2(0, 0);
-	private Vector2 scale = new Vector2(128, 32);
-	
 	private float value = 100, maxValue = 150;
 	
 	private Color backgroundColor = new Color(25, 25, 25);
@@ -18,24 +15,24 @@ public class ProgressBar extends UserInterface {
 	
 	private int padding = 4;
 
-	public ProgressBar(Scene parentScene) {
+	public ProgressBar(Scene parentScene) {		
 		
-		
+		transform.position = new Vector2(0, 0);
+		transform.scale = new Vector2(128, 24);
 		
 		AddToScene(parentScene);		
 	}
 	
 	public ProgressBar(Scene parentScene, Vector2 position) {
 		
-		this.position = position;
-		
+		transform.position = position;		
 		AddToScene(parentScene);		
 	}
 	
 	public ProgressBar(Scene parentScene, Vector2 position, Vector2 scale) {
 		
-		this.position = position;
-		this.scale = scale;
+		transform.position = position;
+		transform.scale = scale;
 		
 		AddToScene(parentScene);		
 	}
@@ -54,9 +51,9 @@ public class ProgressBar extends UserInterface {
 	public void Render(Graphics g) {
 		
 		g.setColor(backgroundColor);
-		g.fillRect(position.x, position.y, scale.x, scale.y);		
+		g.fillRect(transform.position.x, transform.position.y, transform.scale.x, transform.scale.y);		
 		g.setColor(foregroundColor);
-		g.fillRect(position.x + padding, position.y + padding, (int) ((value / maxValue) * (scale.x - (padding * 2))), scale.y - (padding * 2));
+		g.fillRect(transform.position.x + padding, transform.position.y + padding, (int) ((value / maxValue) * (transform.scale.x - (padding * 2))), transform.scale.y - (padding * 2));
 	}
 	
 	// Misc
@@ -82,14 +79,6 @@ public class ProgressBar extends UserInterface {
 		this.backgroundColor = backgroundColor;
 	}
 	
-	public void setPosition(Vector2 position) {
-		this.position = position;
-	}
-	
-	public void setScale(Vector2 scale) {
-		this.scale = scale;
-	}
-	
 	public void setPadding(int padding) {
 		this.padding = padding;
 	}
@@ -101,14 +90,6 @@ public class ProgressBar extends UserInterface {
 	
 	public float getMaxValue() {
 		return maxValue;
-	}
-	
-	public Vector2 getPosition() {
-		return position;
-	}
-	
-	public Vector2 getScale() {
-		return scale;
 	}
 
 }

@@ -3,11 +3,12 @@ package dev.jabo.kree.ui;
 import java.awt.Graphics;
 
 import dev.jabo.kree.Scene;
+import dev.jabo.kree.Transform;
 import dev.jabo.kree.Vector2;
 
 public abstract class UserInterface {
 	
-	protected Vector2 position;
+	protected Transform transform = new Transform();
 
 	public abstract void Update();
 	
@@ -22,6 +23,24 @@ public abstract class UserInterface {
 		newUserInterfaceList[parentScene.userInterfaces.length] = this;
 		parentScene.userInterfaces = newUserInterfaceList;
 		// End
+	}
+	
+	// Getters and Setters
+	
+	public Vector2 getScale() {
+		return transform.scale;
+	}
+	
+	public Vector2 getPosition() {
+		return transform.position;
+	}
+	
+	public void setPosition(Vector2 position) {
+		transform.position = position;
+	}
+	
+	public void setScale(Vector2 scale) {
+		transform.scale = scale;
 	}
 	
 }

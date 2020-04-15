@@ -13,7 +13,6 @@ public class Text extends UserInterface {
 	
 	private Font font = new Font("Times New Roman", Font.PLAIN, 14);
 	
-	private int width = 0;
 	private int height = 0;
 	
 	private boolean showBorder = false;
@@ -21,10 +20,11 @@ public class Text extends UserInterface {
 	private Color color = Color.black;
 	
 	public Text(Scene parentScene, String text, Vector2 position, int width) {
-		this.position = position;
+		
+		transform.position = position;
 		this.text = text;
 		
-		this.width = width;
+		transform.scale = new Vector2(width, 0);
 		
 		AddToScene(parentScene);
 	}
@@ -39,7 +39,7 @@ public class Text extends UserInterface {
 	@Override
 	public void Render(Graphics g) {
 		if(showBorder) {
-			g.drawRect(position.x, position.y, width, height);
+			g.drawRect(transform.position.x, transform.position.y, transform.scale.x, height);
 		}
 		
 		g.setFont(this.font);
@@ -64,7 +64,7 @@ public class Text extends UserInterface {
 		for(String str : s) {
 			int width = g.getFontMetrics(font).stringWidth(last); 
 			curWidth += width + (col * 2);
-			if(curWidth > this.width) {
+			if(curWidth > transform.scale.x) {
 				endl = true;
 			}
 			if(endl) {
@@ -75,7 +75,7 @@ public class Text extends UserInterface {
 				last = "";
 			}
 			last = str;
-			g.drawString(str, this.position.x + (curWidth), this.position.y + font.getSize() * line);
+			g.drawString(str, transform.position.x + (curWidth), transform.position.y + font.getSize() * line);
 			col++;
 			this.height = font.getSize() * line;
 		}

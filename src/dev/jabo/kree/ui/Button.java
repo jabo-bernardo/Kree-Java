@@ -12,8 +12,6 @@ import dev.jabo.kree.Transform;
 import dev.jabo.kree.Vector2;
 
 public class Button extends UserInterface {
-
-	public Transform transform;
 	
 	private boolean hovering;
 	private boolean clicked;
@@ -94,6 +92,20 @@ public class Button extends UserInterface {
 	
 	public boolean onHover() {
 		return hovering;
+	}
+	
+	public void setColor(Color backgroundColor, Color foregroundColor, Color hoverColor) {
+		this.backgroundColor = backgroundColor;
+		this.foregroundColor = foregroundColor;
+		this.hoverColor = hoverColor;
+	}
+	
+	public void setText(String text) {
+		this.text = text;
+	}
+	
+	public void setFont(Font font) {
+		this.font = font;
 	}
 
 }
