@@ -35,9 +35,5 @@ public class Panel extends UserInterface {
 	public void setColor(Color color) {
 		this.color = color;
 	}
-	
-	public Color getColor() {
-		return color;
-	}
 
 }
