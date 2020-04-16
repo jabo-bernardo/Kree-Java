@@ -93,7 +93,7 @@ public class TextInput extends UserInterface {
 		drawTextLineByLine(g);
 	}
 	
-	public void drawTextLineByLine(Graphics g) {
+	private void drawTextLineByLine(Graphics g) {
 		
 		String[] s = value.split(" ");
 		

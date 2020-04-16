@@ -47,7 +47,7 @@ public class Text extends UserInterface {
 		drawTextLineByLine(g);
 	}
 	
-	public void drawTextLineByLine(Graphics g) {
+	private void drawTextLineByLine(Graphics g) {
 		
 		this.height = 0;
 		
