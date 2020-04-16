@@ -11,9 +11,9 @@ public class SpriteRenderer extends Component {
 
 	private Sprite sprite;
 	
-	public SpriteRenderer(String path) {
+	public SpriteRenderer(Sprite spr) {
 		
-		this.sprite = new Sprite(path);
+		this.sprite = spr;
 		this.name = "Sprite Renderer";
 		
 	}
@@ -31,6 +31,10 @@ public class SpriteRenderer extends Component {
 	    if(gameObject != null)
 	    	g2d.drawImage(sprite.getImage(), gameObject.getTransform().getPosition().getX() - (gameObject.getTransform().getScale().getX() / 2), gameObject.getTransform().getPosition().getY() - (gameObject.getTransform().getScale().getY() / 2), gameObject.getTransform().getScale().getX(), gameObject.getTransform().getScale().getY(), null);
 		g2d.setTransform(oldTransform);
+	}
+	
+	public void setSprite(Sprite spr) {
+		this.sprite = spr;
 	}
 
 }

@@ -108,7 +108,7 @@ public class Input implements KeyListener, MouseMotionListener, MouseListener {
 	}
 	
 	// Is mouse in GameObject's scale and position
-	public static boolean MouseIn(GameObject obj) {		
+	public static boolean mouseIn(GameObject obj) {		
 		if(obj.getComponent("Box Collider") != null) {
 			BoxCollider col = (BoxCollider) obj.getComponent("Box Collider");
 			if(col.getCollider().contains(new Point(getMouse().getX(), getMouse().getY()))) {

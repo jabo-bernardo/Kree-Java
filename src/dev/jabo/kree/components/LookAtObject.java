@@ -34,4 +34,8 @@ public class LookAtObject extends Component {
 		this.target = target;
 	}
 	
+	public GameObject getTargetGameObject() {
+		return objectTarget;
+	}
+	
 }

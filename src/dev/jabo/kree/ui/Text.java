@@ -86,12 +86,8 @@ public class Text extends UserInterface {
 		this.color = color;
 	}
 	
-	public void showBorder() {
-		showBorder = true;
-	}
-	
-	public void hideBorder() {
-		showBorder = false;
+	public void showBorder(boolean border) {
+		showBorder = border;
 	}
 	
 	public void setFont(Font font) {

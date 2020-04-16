@@ -20,7 +20,7 @@ public class Audio {
     }
     
     // Load file
-    public void load() {
+    private void load() {
         this.sound = new File(this.path);
     }
     

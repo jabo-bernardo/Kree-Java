@@ -11,7 +11,7 @@ public class RigidBody extends Component {
 	private float acceleration = 0.25f;
 	private float xVelocity = 0;
 	private float yVelocity = 0;
-	public float mass = 1;
+	private float mass = 1;
 	
 	public RigidBody() {
 		this.name = "RigidBody";
@@ -87,6 +87,10 @@ public class RigidBody extends Component {
 	
 	public void addHorizontalForce(int xForce) {
 		this.xVelocity = xForce;
+	}
+	
+	public void setMass(float mass) {
+		this.mass = mass;
 	}
 
 	@Override

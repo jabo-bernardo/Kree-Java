@@ -6,7 +6,7 @@ import dev.jabo.kree.ui.UserInterface;
 
 public class SceneManager {
 
-	public static Scene activeScene;
+	private static Scene activeScene;
 	
 	public static Scene getScene() {
 		return activeScene;
@@ -15,6 +15,10 @@ public class SceneManager {
 	public static void setScene(Scene scene) {
 		scene.Initialize();
 		activeScene = scene;
+	}
+	
+	public static Scene getActiveScene() {
+		return activeScene;
 	}
 	
 	public static void Update() {
