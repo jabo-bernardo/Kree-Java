@@ -33,11 +33,15 @@ public class BoxCollider extends Component {
 	}
 	
 	public boolean collidingWith(BoxCollider col) {
-		if(collider == null) {
+		if(collider == null && col.getCollider() == null) {
 			return false;
-		}
-		if(collider.contains(col.getCollider())) {
-			return true;
+		} else {
+			if(	collider.x + collider.width > col.getCollider().x &&
+				collider.x < col.getCollider().x + col.getCollider().width &&
+				collider.y + collider.height > col.getCollider().y &&
+				collider.y < col.getCollider().y + col.getCollider().height) {
+				return true;
+			}
 		}
 		
 		return false;

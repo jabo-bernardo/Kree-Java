@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 import dev.jabo.kree.Scene;
+import dev.jabo.kree.Sprite;
 import dev.jabo.kree.Vector2;
 
 public class ProgressBar extends UserInterface {
@@ -14,6 +15,8 @@ public class ProgressBar extends UserInterface {
 	private Color foregroundColor = new Color(255, 125, 25);
 	
 	private int padding = 4;
+	
+	private Sprite backgroundImage, foregroundImage;
 	
 	// Constructors
 	public ProgressBar(Scene parentScene) {		
@@ -51,10 +54,19 @@ public class ProgressBar extends UserInterface {
 	@Override
 	public void Render(Graphics g) {
 		
-		g.setColor(backgroundColor);
-		g.fillRect(transform.getPosition().getX(), transform.getPosition().getY(), transform.getScale().getX(), transform.getScale().getY());		
-		g.setColor(foregroundColor);
-		g.fillRect(transform.getPosition().getX() + padding, transform.getPosition().getY() + padding, (int) ((value / maxValue) * (transform.getScale().getX() - (padding * 2))), transform.getScale().getY() - (padding * 2));
+		if(backgroundImage == null) {
+			g.setColor(backgroundColor);
+			g.fillRect(transform.getPosition().getX(), transform.getPosition().getY(), transform.getScale().getX(), transform.getScale().getY());
+		} else {
+			g.drawImage(backgroundImage.getImage(), transform.getPosition().getX(), transform.getPosition().getY(), transform.getScale().getX(), transform.getScale().getY(), null);
+		}
+		
+		if(foregroundImage == null) {
+			g.setColor(foregroundColor);
+			g.fillRect(transform.getPosition().getX() + padding, transform.getPosition().getY() + padding, (int) ((value / maxValue) * (transform.getScale().getX() - (padding * 2))), transform.getScale().getY() - (padding * 2));
+		} else {
+			g.drawImage(foregroundImage.getImage(), transform.getPosition().getX() + padding, transform.getPosition().getY() + padding, (int) ((value / maxValue) * (transform.getScale().getX() - (padding * 2))), transform.getScale().getY() - (padding * 2), null);
+		}
 	}
 	
 	// Misc
@@ -82,6 +94,14 @@ public class ProgressBar extends UserInterface {
 	
 	public void setPadding(int padding) {
 		this.padding = padding;
+	}
+	
+	public void setBackgroundImage(Sprite spr) {
+		this.backgroundImage = spr;
+	}
+	
+	public void setForegroundImage(Sprite spr) {
+		this.foregroundImage = spr;
 	}
 	
 	// Getters

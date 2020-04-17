@@ -8,6 +8,7 @@ import java.awt.Rectangle;
 
 import dev.jabo.kree.Input;
 import dev.jabo.kree.Scene;
+import dev.jabo.kree.Sprite;
 import dev.jabo.kree.Vector2;
 
 public class TextInput extends UserInterface {
@@ -25,6 +26,8 @@ public class TextInput extends UserInterface {
 	private boolean selected = false;
 	
 	private Font font = new Font("Arial", Font.BOLD, 16);
+	
+	private Sprite backgroundImage;
 	
 	public TextInput(Scene parentScene, Vector2 position, Vector2 scale) {
 		
@@ -83,11 +86,15 @@ public class TextInput extends UserInterface {
 
 	@Override
 	public void Render(Graphics g) {
-		g.setColor(backgroundColor);
-		if(selected) {
-			g.setColor(selectedColor);
+		if(backgroundImage == null) {
+			g.setColor(backgroundColor);
+			if(selected) {
+				g.setColor(selectedColor);
+			}
+			g.fillRect(transform.getPosition().getX(), transform.getPosition().getY(), transform.getScale().getX(), transform.getScale().getY());
+		} else {
+			g.drawImage(backgroundImage.getImage(), transform.getPosition().getX(), transform.getPosition().getY(), transform.getScale().getX(), transform.getScale().getY(), null);
 		}
-		g.fillRect(transform.getPosition().getX(), transform.getPosition().getY(), transform.getScale().getX(), transform.getScale().getY());
 		g.setColor(foregroundColor);
 		g.setFont(font);
 		drawTextLineByLine(g);
@@ -137,6 +144,10 @@ public class TextInput extends UserInterface {
 	
 	public String getValue() {
 		return value;
+	}
+	
+	public void setBackgroundImage(Sprite spr) {
+		this.backgroundImage = spr;
 	}
 
 }

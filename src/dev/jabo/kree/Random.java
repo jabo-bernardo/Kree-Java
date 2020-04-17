@@ -35,9 +35,4 @@ public class Random {
 		return rand;
 	}
 	
-	// Choose on given parameter
-	public static Object choose(Object[] choice) {
-		return choice[range(0, choice.length - 1)];
-	}
-	
 }
