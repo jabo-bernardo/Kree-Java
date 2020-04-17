@@ -4,7 +4,6 @@ import java.awt.Graphics;
 
 import dev.jabo.kree.Scene;
 import dev.jabo.kree.Transform;
-import dev.jabo.kree.Vector2;
 
 public abstract class UserInterface {
 	
