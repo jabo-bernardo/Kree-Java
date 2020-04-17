@@ -33,9 +33,6 @@ public class Particle {
 	private float velocity;
 	
 	private int id;
-	
-	private float xMove;
-	private float yMove;
 
 	public Particle(ParticleSystem parent, int id) {
 		

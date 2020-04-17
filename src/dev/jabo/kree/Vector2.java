@@ -15,7 +15,7 @@ public class Vector2 {
 	}
 	
 	// Returns the distance between two vectors
-	static int distance(Vector2 v1, Vector2 v2) {
+	public static int distance(Vector2 v1, Vector2 v2) {
 		return (int) Math.floor(
 			Math.sqrt(
 				Math.pow(v2.x - v1.x, 2) +
