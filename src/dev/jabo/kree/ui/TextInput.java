@@ -34,7 +34,7 @@ public class TextInput extends UserInterface {
 		transform.setPosition(position);
 		transform.setScale(scale);
 		
-		collider = new Rectangle(position.getX(), position.getY(), scale.getX(), scale.getY());
+		collider = new Rectangle((int)position.getX(), (int)position.getY(), (int)scale.getX(), (int)scale.getY());
 		
 		AddToScene(parentScene);
 		
@@ -46,13 +46,13 @@ public class TextInput extends UserInterface {
 	@Override
 	public void Update() {
 		
-		collider.x = transform.getPosition().getX();
-		collider.y = transform.getPosition().getY();
-		collider.width = transform.getScale().getX();
-		collider.height = transform.getScale().getY();
+		collider.x = (int)transform.getPosition().getX();
+		collider.y = (int)transform.getPosition().getY();
+		collider.width = (int)transform.getScale().getX();
+		collider.height = (int)transform.getScale().getY();
 		
 		if(Input.leftMouseDown) {
-			if(collider.contains(new Point(Input.getMouse().getX(), Input.getMouse().getY()))) {
+			if(collider.contains(new Point((int)Input.getMouse().getX(), (int)Input.getMouse().getY()))) {
 				selected = true;
 			} else {
 				selected = false;
@@ -91,9 +91,9 @@ public class TextInput extends UserInterface {
 			if(selected) {
 				g.setColor(selectedColor);
 			}
-			g.fillRect(transform.getPosition().getX(), transform.getPosition().getY(), transform.getScale().getX(), transform.getScale().getY());
+			g.fillRect((int)transform.getPosition().getX(), (int)transform.getPosition().getY(), (int)transform.getScale().getX(), (int)transform.getScale().getY());
 		} else {
-			g.drawImage(backgroundImage.getImage(), transform.getPosition().getX(), transform.getPosition().getY(), transform.getScale().getX(), transform.getScale().getY(), null);
+			g.drawImage(backgroundImage.getImage(), (int)transform.getPosition().getX(), (int)transform.getPosition().getY(), (int)transform.getScale().getX(), (int)transform.getScale().getY(), null);
 		}
 		g.setColor(foregroundColor);
 		g.setFont(font);
@@ -122,7 +122,7 @@ public class TextInput extends UserInterface {
 				return;
 			}
 			last = str;
-			g.drawString(str, transform.getPosition().getX() + (curWidth) + ((transform.getScale().getY() - font.getSize()) / 2), transform.getPosition().getY() + font.getSize() * line + ((transform.getScale().getY() - font.getSize()) / 2));
+			g.drawString(str, ((int)transform.getPosition().getX() + (curWidth)) + (((int)transform.getScale().getY() - font.getSize()) / 2), (int)transform.getPosition().getY() + font.getSize() * line + (((int)transform.getScale().getY() - font.getSize()) / 2));
 			col++;
 		}
 		

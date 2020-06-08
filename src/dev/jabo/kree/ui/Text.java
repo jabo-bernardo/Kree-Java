@@ -39,7 +39,7 @@ public class Text extends UserInterface {
 	@Override
 	public void Render(Graphics g) {
 		if(showBorder) {
-			g.drawRect(transform.getPosition().getX(), transform.getPosition().getY(), transform.getScale().getX(), height);
+			g.drawRect((int)transform.getPosition().getX(), (int)transform.getPosition().getY(), (int)transform.getScale().getX(), height);
 		}
 		
 		g.setFont(this.font);
@@ -75,7 +75,7 @@ public class Text extends UserInterface {
 				last = "";
 			}
 			last = str;
-			g.drawString(str, transform.getPosition().getX() + (curWidth), transform.getPosition().getY() + font.getSize() * line);
+			g.drawString(str, (int)(transform.getPosition().getX() + (curWidth)), (int)transform.getPosition().getY() + font.getSize() * line);
 			col++;
 			this.height = font.getSize() * line;
 		}

@@ -56,16 +56,16 @@ public class ProgressBar extends UserInterface {
 		
 		if(backgroundImage == null) {
 			g.setColor(backgroundColor);
-			g.fillRect(transform.getPosition().getX(), transform.getPosition().getY(), transform.getScale().getX(), transform.getScale().getY());
+			g.fillRect((int)transform.getPosition().getX(), (int)transform.getPosition().getY(), (int)transform.getScale().getX(), (int)transform.getScale().getY());
 		} else {
-			g.drawImage(backgroundImage.getImage(), transform.getPosition().getX(), transform.getPosition().getY(), transform.getScale().getX(), transform.getScale().getY(), null);
+			g.drawImage(backgroundImage.getImage(), (int)transform.getPosition().getX(), (int)transform.getPosition().getY(), (int)transform.getScale().getX(), (int)transform.getScale().getY(), null);
 		}
 		
 		if(foregroundImage == null) {
 			g.setColor(foregroundColor);
-			g.fillRect(transform.getPosition().getX() + padding, transform.getPosition().getY() + padding, (int) ((value / maxValue) * (transform.getScale().getX() - (padding * 2))), transform.getScale().getY() - (padding * 2));
+			g.fillRect((int)transform.getPosition().getX() + padding, (int)transform.getPosition().getY() + padding, (int) ((value / maxValue) * (transform.getScale().getX() - (padding * 2))), (int)transform.getScale().getY() - (padding * 2));
 		} else {
-			g.drawImage(foregroundImage.getImage(), transform.getPosition().getX() + padding, transform.getPosition().getY() + padding, (int) ((value / maxValue) * (transform.getScale().getX() - (padding * 2))), transform.getScale().getY() - (padding * 2), null);
+			g.drawImage(foregroundImage.getImage(), (int)transform.getPosition().getX() + padding, (int)transform.getPosition().getY() + padding, (int) ((value / maxValue) * (transform.getScale().getX() - (padding * 2))), (int)transform.getScale().getY() - (padding * 2), null);
 		}
 	}
 	

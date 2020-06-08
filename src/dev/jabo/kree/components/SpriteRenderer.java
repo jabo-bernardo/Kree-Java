@@ -29,7 +29,7 @@ public class SpriteRenderer extends Component {
 		AffineTransform oldTransform = g2d.getTransform();
 		g2d.rotate(Math.toRadians(gameObject.getTransform().getRotation()), gameObject.getTransform().getPosition().getX(), gameObject.getTransform().getPosition().getY());
 	    if(gameObject != null)
-	    	g2d.drawImage(sprite.getImage(), gameObject.getTransform().getPosition().getX() - (gameObject.getTransform().getScale().getX() / 2), gameObject.getTransform().getPosition().getY() - (gameObject.getTransform().getScale().getY() / 2), gameObject.getTransform().getScale().getX(), gameObject.getTransform().getScale().getY(), null);
+	    	g2d.drawImage(sprite.getImage(), (int)(gameObject.getTransform().getPosition().getX() - (gameObject.getTransform().getScale().getX() / 2)), (int)(gameObject.getTransform().getPosition().getY() - (gameObject.getTransform().getScale().getY() / 2)), (int)gameObject.getTransform().getScale().getX(), (int)gameObject.getTransform().getScale().getY(), null);
 		g2d.setTransform(oldTransform);
 	}
 	

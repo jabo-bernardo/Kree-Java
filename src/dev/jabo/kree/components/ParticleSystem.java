@@ -41,8 +41,8 @@ public class ParticleSystem extends Component {
 		
 		this.particleCount = particleCount;
 		
-		this.x = gameObject.getTransform().getPosition().getX();
-		this.y = gameObject.getTransform().getPosition().getY();
+		this.x = (int)gameObject.getTransform().getPosition().getX();
+		this.y = (int)gameObject.getTransform().getPosition().getY();
 		
 		this.minimumSize = minimumSize;
 		this.maximumSize = maximumSize;
