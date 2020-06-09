@@ -13,7 +13,15 @@ public class GameObject {
 	private String name;
 	
 	private Scene parentScene;
-	
+
+	/**
+	 *
+	 * @authpr jabo-bernardo
+	 *
+	 * @param parentScene Scene where this object is part of
+	 * @param name GameObject name
+	 *
+	 * */
 	public GameObject(Scene parentScene, String name) {
 		this.name = name;
 		this.parentScene = parentScene;
@@ -48,7 +56,12 @@ public class GameObject {
 		}		
 	}
 	
-	// Get reference of component
+	/**
+	 *
+	 * @param componentName Component Name
+	 *
+	 * @return Component
+	 * */
 	public Component getComponent(String componentName) {
 		for(int i = 0; i < components.length; i++) {
 			if(components[i].name == componentName) {
@@ -58,7 +71,11 @@ public class GameObject {
 		return null;
 	}
 	
-	// Add component
+	/**
+	 *
+	 * @param component component to add
+	 *
+	 * */
 	public void addComponent(Component component) {
 		
 		component.gameObject = this;
