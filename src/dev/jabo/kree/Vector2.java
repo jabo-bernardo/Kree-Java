@@ -25,9 +25,10 @@ public class Vector2 {
 	}
 	
 	// Vector Maths
-	public void add(Vector2 vector) {
+	public Vector2 add(Vector2 vector) {
 		this.x += vector.x;
 		this.y += vector.y;
+		return this;
 	}
 	
 	public Vector2 subtract(Vector2 vector) {
@@ -36,14 +37,16 @@ public class Vector2 {
         return this;
     }
 	
-	public void divide(Vector2 vector) {
+	public Vector2 divide(Vector2 vector) {
 		this.x /= vector.x;
 		this.y /= vector.y;
+		return this;
 	}
 	
-	public void multiply(Vector2 vector) {
+	public Vector2 multiply(Vector2 vector) {
 		this.x *= vector.x;
 		this.y *= vector.y;
+		return this;
 	}
 	
 	// Move towards a vector

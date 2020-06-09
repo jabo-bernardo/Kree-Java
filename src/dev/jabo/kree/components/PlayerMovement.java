@@ -9,10 +9,13 @@ import dev.jabo.kree.Vector2;
 
 public class PlayerMovement extends Component {
 
+	public static final int ARROWS = 0;
+	public static final int WASD = 1;
+
 	public float movementSpeed = 0.5f;
-	public String movementKeys = "Arrows";
+	public int movementKeys = ARROWS;
 	
-	public PlayerMovement(float movementSpeed, String movementKeys) {
+	public PlayerMovement(float movementSpeed, int movementKeys) {
 		this.name = "Player Movement";
 		this.movementSpeed = movementSpeed;
 		this.movementKeys = movementKeys;
@@ -20,7 +23,7 @@ public class PlayerMovement extends Component {
 	
 	@Override
 	public void Update() {
-		if(movementKeys.equals("Arrows")) {
+		if(movementKeys == ARROWS) {
 			// Left key
 			if(Input.isKeyPressed(37)) {
 				gameObject.getTransform().translate(Vector2.left.subtractX(movementSpeed));
@@ -41,7 +44,7 @@ public class PlayerMovement extends Component {
 				gameObject.getTransform().translate(Vector2.down.addY(movementSpeed));
 				Vector2.down.subtractY(movementSpeed);
 			}
-		} else if(movementKeys.equals("WASD")) {
+		} else if(movementKeys == WASD) {
 			// Left key A
 			if(Input.isKeyPressed(65)) {
 				gameObject.getTransform().translate(Vector2.left.subtractX(movementSpeed));
