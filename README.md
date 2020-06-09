@@ -1,7 +1,7 @@
 # Welcome to Kree
 ## Getting Started?
 - [Download](https://github.com/jabo-bernardo/Kree-Java/releases) <br>
-- [Documentation](https://jabo-bernardo.github.io/kree-documentation/)
+- [Documentation](https://kree.gitbook.io/documentation/)
 - [Discord](https://discord.gg/m2hYa6F)
 - [Kree YouTube](https://www.youtube.com/channel/UCIcwkr2LgOXrCa7Ou0B9yeg)
 - [Sample Games using Kree](https://github.com/jabo-bernardo/Kree-Sample)
