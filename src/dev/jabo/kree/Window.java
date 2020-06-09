@@ -14,7 +14,18 @@ public class Window {
 	
 	private String windowTitle;
 	private int windowWidth, windowHeight;
-	
+
+	/**
+	 *
+	 * @author jabo-bernardo
+	 * @version v1.0
+	 *
+	 * @param windowTitle The text that will be shown in the top left of the window
+	 * @param windowWidth The X dimension of the window
+	 * @param windowHeight The Y dimension of the window
+	 *
+	 *
+	 * */
 	public Window(String windowTitle, int windowWidth, int windowHeight) {
 		
 		this.windowTitle = windowTitle;
@@ -24,7 +35,13 @@ public class Window {
 		createWindow();
 		
 	}
-	
+
+	/**
+	 *
+	 * @author jabo-bernardo
+	 * @version v1.0
+	 *
+	 * */
 	private void createWindow() {
 		
 		window = new JFrame(windowTitle);
@@ -44,23 +61,60 @@ public class Window {
 		window.pack();
 		
 	}
-	
+
+	/**
+	 *
+	 * @author jabo-bernardo
+	 * @version v1.0
+	 *
+	 * @return int The X dimension of the screen
+	 *
+	 * */
 	public int getWindowWidth() {
 		return windowWidth;
 	}
-	
+
+	/**
+	 *
+	 * @return int The Y dimension of the screen
+	 *
+	 * */
 	public int getWindowHeight() {
 		return windowHeight;
 	}
-	
+
+	/**
+	 *
+	 * @author jabo-bernardo
+	 * @version v1.0
+	 *
+	 * @return String The title of the window
+	 *
+	 * */
 	public String getWindowTitle() {
 		return windowTitle;
 	}
-	
+
+	/**
+	 *
+	 * @author jabo-bernardo
+	 * @version v1.0
+	 *
+	 * @return JFrame The window object
+	 *
+	 * */
 	public JFrame getWindow() {
 		return window;
 	}
-	
+
+	/**
+	 *
+	 * @author jabo-bernardo
+	 * @version v1.0
+	 *
+	 * @return Canvas The drawing board
+	 *
+	 * */
 	public Canvas getCanvas() {
 		return canvas;
 	}
