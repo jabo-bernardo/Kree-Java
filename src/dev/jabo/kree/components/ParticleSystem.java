@@ -26,12 +26,14 @@ public class ParticleSystem extends Component {
 	private int minimumVelocity, maximumVelocity;
 	
 	private Color color;
+
+	private boolean endlees = false;
 	
 	public Circle range;
 	
 	private boolean alive;
 	
-	public ParticleSystem(GameObject gameObject, int particleType, int minimumSize, int maximumSize, int minimumVelocity, int maximumVelocity, int particleCount, int particleRange, Color color) {
+	public ParticleSystem(GameObject gameObject, int particleType, int minimumSize, int maximumSize, int minimumVelocity, int maximumVelocity, int particleCount, int particleRange, Color color, boolean endlees) {
 		
 		this.name = "Particle System";
 		
@@ -53,6 +55,8 @@ public class ParticleSystem extends Component {
 		this.color = color;
 		
 		this.range = new Circle(new Point(this.x, this.y), particleRange);
+
+		this.endlees = endlees;
 		
 		Initialize();
 	}
@@ -86,8 +90,10 @@ public class ParticleSystem extends Component {
 			particle.Update();
 			particleLeft++;
 		}
-		if(particleLeft == 0) {
+		if(particleLeft == 0 && !endlees) {
 			alive = false;
+		} else {
+			alive = true;
 		}
 	}
 	

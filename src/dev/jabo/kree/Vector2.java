@@ -30,10 +30,11 @@ public class Vector2 {
 		this.y += vector.y;
 	}
 	
-	public void subtract(Vector2 vector) {
+	public Vector2 subtract(Vector2 vector) {
 		this.x -= vector.x;
 		this.y -= vector.y;
-	}
+        return this;
+    }
 	
 	public void divide(Vector2 vector) {
 		this.x /= vector.x;
