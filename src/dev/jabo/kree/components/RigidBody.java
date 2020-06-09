@@ -12,6 +12,7 @@ public class RigidBody extends Component {
 	private float xVelocity = 0;
 	private float yVelocity = 0;
 	private float mass = 1;
+	public boolean gravity = true;
 	
 	public RigidBody() {
 		this.name = "RigidBody";
@@ -67,20 +68,23 @@ public class RigidBody extends Component {
 					// Bottom
 					if(gameObjectPos.getY() + gameObjectScale.getY() > colliderObjectPos.getY()) {
 						if(gameObjectPos.getY() + gameObjectScale.getY() < colliderObjectPos.getY() + 16) {
-							gameObjectPos.subtractY(1);;
+							if(gravity)
+								gameObjectPos.subtractY(1);;
 						}
 					}
 					// Top
 					if(gameObjectPos.getY() + gameObjectScale.getY() > colliderObjectPos.getY()) {
 						if(gameObjectPos.getY() + gameObjectScale.getY() > colliderObjectPos.getY() + colliderObjectScale.getY() - 16) {
-							gameObjectPos.addY(1);;
+							if(gravity)
+								gameObjectPos.addY(1);;
 						}
 					}
 					this.yVelocity = 0;
 				}
 			}
 		}
-		gameObject.getTransform().translate(new Vector2((int) xVelocity, (int) yVelocity));
+		if(gravity)
+			gameObject.getTransform().translate(new Vector2((int) xVelocity, (int) yVelocity));
 		xVelocity = 0;
 		
 	}

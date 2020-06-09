@@ -7,9 +7,9 @@ public class Vector2 {
 	public static Vector2 up = new Vector2(0, -1);
 	public static Vector2 down = new Vector2(0, 1);
 
-	private int x, y;
+	private float x, y;
 	
-	public Vector2(int x, int y) {
+	public Vector2(float x, float y) {
 		this.x = x;
 		this.y = y;
 	}
@@ -54,8 +54,8 @@ public class Vector2 {
 			return;
 		}
 		
-	    int fX = to.x - this.x;
-	    int fY = to.y - this.y;
+	    float fX = to.x - this.x;
+	    float fY = to.y - this.y;
 	    float dist = (float) Math.sqrt( fX*fX + fY*fY );
 	    float step = (speed / dist);
 	    this.x += fX * step;
@@ -63,35 +63,41 @@ public class Vector2 {
 	
 	}
 	
-	public void subtractX(int x) {
+	public Vector2 subtractX(float x) {
 		this.x -= x;
+		return this;
 	}
 	
-	public void subtractY(int y) {
+	public Vector2 subtractY(float y) {
 		this.y -= y;
+		return this;
 	}
 	
-	public void addX(int x) {
+	public Vector2 addX(float x) {
 		this.x += x;
+		return this;
 	}
 	
-	public void addY(int y) {
+	public Vector2 addY(float y) {
 		this.y += y;
+		return this;
 	}
 	
-	public void setX(int x) {
+	public Vector2 setX(float x) {
 		this.x = x;
+		return this;
 	}
 	
-	public void setY(int y) {
+	public Vector2 setY(float y) {
 		this.y = y;
+		return this;
 	}
 	
-	public int getY() {
+	public float getY() {
 		return y;
 	}
 	
-	public int getX() {
+	public float getX() {
 		return x;
 	}
 	

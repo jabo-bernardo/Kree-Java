@@ -7,15 +7,15 @@ import dev.jabo.kree.Window;
 public class Launcher {
 
 	public static void main(String[] args) {
-		
+
 		Game game = new Game(new Window("My Window", 800, 600));
-		
+
 		MyScene myScene = new MyScene(game);
-		
+
 		SceneManager.setScene(myScene);
-		
+
 		game.start();
-		
+
 	}
-	
+
 }

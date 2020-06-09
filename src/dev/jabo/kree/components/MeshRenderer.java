@@ -28,7 +28,7 @@ public class MeshRenderer extends Component {
 		g2d.rotate(Math.toRadians(gameObject.getTransform().getRotation()), gameObject.getTransform().getPosition().getX(), gameObject.getTransform().getPosition().getY());
 	    if(gameObject != null) {
 	    	g2d.setColor(color);
-	    	g2d.fillRect(gameObject.getTransform().getPosition().getX() - (gameObject.getTransform().getScale().getX() / 2), gameObject.getTransform().getPosition().getY() - (gameObject.getTransform().getScale().getY() / 2), gameObject.getTransform().getScale().getX(), gameObject.getTransform().getScale().getY());
+	    	g2d.fillRect((int)gameObject.getTransform().getPosition().getX() - ((int)gameObject.getTransform().getScale().getX() / 2), (int)gameObject.getTransform().getPosition().getY() - ((int)gameObject.getTransform().getScale().getY() / 2), (int)gameObject.getTransform().getScale().getX(), (int)gameObject.getTransform().getScale().getY());
 		}
 	    g2d.setTransform(oldTransform);
 	}

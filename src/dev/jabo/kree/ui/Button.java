@@ -53,13 +53,13 @@ public class Button extends UserInterface {
 	@Override
 	public void Update() {
 		
-		collider.x = transform.getPosition().getX();
-		collider.y = transform.getPosition().getY();
-		collider.width = transform.getScale().getX();
-		collider.height = transform.getScale().getY();
+		collider.x = (int)transform.getPosition().getX();
+		collider.y = (int)transform.getPosition().getY();
+		collider.width = (int)transform.getScale().getX();
+		collider.height = (int)transform.getScale().getY();
 		
-		mousePoint.x = Input.getMouse().getX();
-		mousePoint.y = Input.getMouse().getY();
+		mousePoint.x = (int)Input.getMouse().getX();
+		mousePoint.y = (int)Input.getMouse().getY();
 		
 		if(collider.contains(mousePoint)) {
 			hovering = true;
@@ -85,13 +85,13 @@ public class Button extends UserInterface {
 			if(hovering) {
 				g.setColor(hoverColor);
 			}
-			g.fillRect(transform.getPosition().getX(), transform.getPosition().getY(), transform.getScale().getX(), transform.getScale().getY());
+			g.fillRect((int)transform.getPosition().getX(), (int)transform.getPosition().getY(), (int)transform.getScale().getX(), (int)transform.getScale().getY());
 		} else {
-			g.drawImage(backgroundImage.getImage(), transform.getPosition().getX(), transform.getPosition().getY(), transform.getScale().getX(), transform.getScale().getY(), null);
+			g.drawImage(backgroundImage.getImage(), (int)transform.getPosition().getX(), (int)transform.getPosition().getY(), (int)transform.getScale().getX(), (int)transform.getScale().getY(), null);
 		}
 		g.setColor(foregroundColor);
 		g.setFont(font);
-		g.drawString(text, transform.getPosition().getX() + ((transform.getScale().getX() / 2) - (g.getFontMetrics(font).stringWidth(text) / 2)), (transform.getPosition().getY() + font.getSize()- 3) + ((transform.getScale().getY() / 2) - (font.getSize() / 2)));
+		g.drawString(text, (int)transform.getPosition().getX() + (((int)transform.getScale().getX() / 2) - (g.getFontMetrics(font).stringWidth(text) / 2)), ((int)transform.getPosition().getY() + font.getSize()- 3) + (((int)transform.getScale().getY() / 2) - (font.getSize() / 2)));
 		
 	}
 	
