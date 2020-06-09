@@ -9,7 +9,16 @@ public class SpriteSheet {
 	
 	// Frames
 	private BufferedImage[] images;
-	
+
+	/**
+	 *
+	 * @author jabo-bernardo
+	 *
+	 * @param sheet The sprite sheet of the animation\
+	 * @param frameWidth The horizontal size of each frame
+	 * @param frameHeight The vertical size of each frame
+	 *
+	 * */
 	public SpriteSheet(Sprite sheet, int frameWidth, int frameHeight){
 		this.sheet = sheet.getImage();
 		
@@ -19,7 +28,14 @@ public class SpriteSheet {
 		}
 		
 	}
-	
+
+	/**
+	 *
+	 * @author jabo-bernardo
+	 *
+	 * @return BufferedImage[] returns all of the frames (cropped)
+	 *
+	 * */
 	public BufferedImage[] getFrames() {
 		return images;
 	}
